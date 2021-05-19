@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MorrallaExpress.Views.Account.Templates.PaymentsListItemTemplate">
+    <ViewCell.View>
+        <Frame Margin="30,15,30,15" HasShadow="False" HeightRequest="72" CornerRadius="15" VerticalOptions="CenterAndExpand" BorderColor="{StaticResource BorderColor}">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{Binding CardIcn}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="12"/>
+                <StackLayout VerticalOptions="CenterAndExpand" Margin="10,0">
+                    <Label Text="{Binding MaskedCard}" Style="{StaticResource BlackLabel}" FontSize="13" VerticalOptions="Center" />
+                    <Label Text="{Binding Expiration}" Style="{StaticResource BlackLabel}" FontSize="13" VerticalOptions="Center" />
+                </StackLayout>
+                <Image Source="trash" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="17">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteCommand, Mode=TwoWay}" CommandParameter="{Binding .}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+            </StackLayout>
+        </Frame>
+    </ViewCell.View>
+</ViewCell>

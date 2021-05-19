@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}"
+             x:Class="MorrallaExpress.Views.Driver.ProfileDriverPage">
+    <ScrollView>
+        <StackLayout Margin="30" >
+            <Frame  BackgroundColor="White" IsVisible="{Binding IsActive,Converter = {StaticResource ReverseBool}}" CornerRadius="10"  HeightRequest="17"  HasShadow="False" BorderColor="{StaticResource BorderColor}" >
+                <Label Text="Estás desconectado" TextColor="#f16868" HorizontalOptions="CenterAndExpand"  Style="{StaticResource GrayLabel}"/>
+            </Frame>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,30,0,10">
+                    <custom:CircleImage   Source="{Binding Photo}" HeightRequest="69" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                        <Label Text="¡Hola!" Style="{StaticResource GrayLabel}"/>
+                        <Label Text="{Binding Name.Value}" Style="{StaticResource BlackBold}"  FontSize="20" FontAttributes="Bold"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,20">
+                    <StackLayout>
+                        <Label Text="Teléfono: " Style="{StaticResource GrayLabel}"/>
+                        <Label Text="{Binding Phone.Value}" Style="{StaticResource BlackLabel}" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <Label Text="Correo electrónico: " Style="{StaticResource GrayLabel}"/>
+                        <Label Text="{Binding Email.Value}" Style="{StaticResource BlackLabel}"  />
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="Cambiar contraseña" Style="{StaticResource BlackLabel}" TextColor="#0c7fff">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangePasswordCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Switch IsToggled="{Binding IsActive}" HorizontalOptions="CenterAndExpand"  Scale="1.7" TranslationY="0" Margin="0,20,0,0">
+                    <Switch.Behaviors>
+                        <prism:EventToCommandBehavior EventName="Toggled"  Command="{Binding DriverCommand}" CommandParameter="{Binding .}"/>
+                    </Switch.Behaviors>
+                </Switch>
+                <Label Text="Desconectado" IsVisible="{Binding IsActive,Converter = {StaticResource ReverseBool}}" Margin="0,5" HorizontalOptions="CenterAndExpand" Style="{StaticResource GrayLabel}"/>
+                <Label Text="Conectado" IsVisible="{Binding IsActive}" Margin="0,5" HorizontalOptions="CenterAndExpand" Style="{StaticResource GrayLabel}"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

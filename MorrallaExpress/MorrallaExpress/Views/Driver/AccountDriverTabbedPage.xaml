@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            xmlns:local="clr-namespace:MorrallaExpress.Views.Driver"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            Title="{Binding Title}"
+            x:Class="MorrallaExpress.Views.Driver.AccountDriverTabbedPage"
+            android:TabbedPage.BarSelectedItemColor="#6ca142"
+            android:TabbedPage.BarItemColor="#8da2b9">
+    <TabbedPage.Children>
+        <local:ProfileDriverPage Title="Mi Cuenta" IconImageSource="AccountIcn.png"/>
+        <local:BillingDriverPage Title="Mis Datos" IconImageSource="Description.png"/>
+        <local:DriverScorePage Title="Mi Puntuación" IconImageSource="Timeline.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

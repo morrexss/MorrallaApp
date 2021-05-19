@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Legal.LegalPage">
+    <ScrollView>
+    <StackLayout Margin="30">
+            <Label TextColor="Black" FontSize="20"  HorizontalOptions="CenterAndExpand" Text="TÉRMINOS Y CONDICIONES" Style="{StaticResource BlackBold}"/>
+        <Label Style="{StaticResource LegalLabel}" Text="1.-ACERCA DE MORREXSS" Margin="0,5"/>
+            <Label FontSize="14" Style="{StaticResource BlackLabel}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Style="{StaticResource BlackBold}" Text="MORREXSS"/>
+                    <Span Style="{StaticResource BlackLabel}"  Text=" es una plataforma de servicios especializada en facilitar una adecuada e integral administración del dinero, propiedad de Morralla Express, S.A de C.V., creada en el año 2006 por empresarios mexicanos."/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+            <Label FontSize="14" >
+            <Label.FormattedText>
+                <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="MORREXSS"/>
+                        <Span Style="{StaticResource BlackLabel}" Text=" como empresa líder y pionera en México en el servicio de administración de fondos de caja a comercios en general, cuenta con más de 15 años de experiencia brindando seguridad, certeza y agilidad a miles de cajas registradoras de comercios en diversas partes del país, lo que ha ayudado a nuestros clientes a cerrar con más eficiencia sus ventas y transacciones con sus consumidores de bienes ó servicios."/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+            <Label FontSize="14" Style="{StaticResource BlackLabel}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="MORREXSS"/>
+                        <Span Style="{StaticResource BlackLabel}" Text=" es originaria del Estado de Sonora, México, teniendo su sucursal matriz en la Ciudad de Hermosillo, asimismo, a través del sistema de franquicias ha aumentado su cobertura a ciudades como Tijuna, B.C., Mexicali, B.C., Mazatlan, Sin., Ciudad Obregón. Son., Tuxtla Gutiérrez, Chiapas, y Cancún, Quintana Roo."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Las Oficinas Corporativas de Morralla Express, S.A. de C.V. (MORREXSS) se encuentran ubicadas en Avenida Monteverde No.- 166, entre José S. Healy y Michoacan, Colonia San Benito, C.P. 83190, de la ciudad de Hermosillo, Sonora, México, Telefono (662) 2108990, Página Web "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="www.morrexss.com" TextColor="Blue"/>
+                        <Span Style="{StaticResource BlackLabel}" Text=" y correo "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="atencion@morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource LegalLabel}" Text="2.-DEL SERVICIO" Margin="0,5"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Servicios Morrexss: "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Los servicios brindados por la plataforma digital "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="consisten en la facilitación, a empresas, comercios ó particulares que cuenten con caja registradora en sus negocios, de sus necesidades de moneda metálica ó papel billete en moneda nacional exclusivamente para el cierre de sus transacciones, así como la recolección de sus ventas mediante deposito inmediato de sus cortes."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="       2.1.- Proveeduría Moneda Metálica: Morrexss " />
+                        <Span Style="{StaticResource BlackLabel}" Text="a través de su plataforma le ofrece la posibilidad de levantar solicitud de la cantidad en morralla o moneda que usted requiera, en las denominaciones que necesite, bajo un empaque al detalle y estandarizado, que será atendida por un "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socio Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="consisten en la facilitación, a empresas, comercios ó particulares que cuenten con caja registradora en sus negocios, de sus necesidades de moneda metálica ó papel billete en moneda nacional exclusivamente para el cierre de sus transacciones, así como la recolección de sus ventas mediante deposito inmediato de sus cortes."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="       2.2.- Proveeduría de Efectivo: Morrexss  " />
+                        <Span Style="{StaticResource BlackLabel}" Text="a través de su plataforma le ofrece la posibilidad de levantar solicitud de la cantidad en efectivo o papel billete que usted requiera, que será atendida por un "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socio Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="de forma ágil y eficiente, por una comisión accesible; evitando con ello vueltas y pérdida de tiempo, y obteniendo la posibilidad de disponer de los recursos disponibles en sus tarjetas."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="       2.3.- Recolección de Valores: Morrexss  " />
+                        <Span Style="{StaticResource BlackLabel}" Text="a través de su plataforma le ofrece la posibilidad de levantar solicitud de la cantidad en efectivo que requiera se le recolecte y deposite vía SPEI  a la cuenta que el cliente señale, misma que será atendida por un  "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socio Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="de forma ágil y eficiente, por una comisión accesible; evitando con ello vueltas y pérdida de tiempo, y obteniendo seguridad en el manejo de sus recursos, así como la inmediatez o deposito instantáneo de sus cortes de caja o ventas, lo que le permite hacer más eficiente su operación. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource LegalLabel}" Text="3.- TERMINOS Y CONDICIONES" Margin="0,5"/>
+            <Label FontSize="14"> 
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Nota Importante.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text=" El cliente deberá contabilizar los valores recibidos o recolectados en el cierre de cada servicio, tanto en la entrega de moneda metálica como de efectivo, así como en la recolección de valores efectuadas por los "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socios Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="a efecto de corroborar que las cantidades sean las correctas, ya que no se aceptarán reclamaciones con posterioridad al cierre de los servicios. Por tanto "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="se deslinda de toda responsabilidad generada por la omisión por parte del cliente de contabilizar las cantidades objeto del servicio y/o por la incorrecta contabilización de los mismos. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Aplicación Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es el programa digital propiedad de Morralla Express, S.A. de C.V., que puede ser instalado por el cliente y/o usuario en sus dispositivos móviles o usarlo a través de la web, el cual permite realizar las actividades relacionadas con los servicios prestados por Morrexss, conforme a sus términos y condiciones los cuales podrán ser consultados en la pagina web y/o al descargar referida aplicación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Contraseña Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es la clave designada por el cliente y/o usuario "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="al realizar su registro en la plataforma, con la cual podrá acceder y/o administrar su cuenta "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="en la pagina web, así como en la aplicación móvil, la cual sirve para poder utilizar la plataforma y acceder a los servicios prestado por "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="al cliente."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" FontAttributes="Bold" TextColor="Black" Text="Cuenta Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es la cuenta individual de cada cliente "/>
+                        <Span Style="{StaticResource BlackBold}" FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="desde donde realiza sus ordenes de servicio, registra sus datos de identificación y perfil, así como sucursales donde desea ser atendido y acumula su información de consumo de servicios."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Sucursales Cliente Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Son los puntos de venta donde desea el cliente ser atendido con alguno de los servicios ofertados por "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="a través de su plataforma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Cliente Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es el usuario o destinatario final de los servicios ofertados por "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="quien se identificará con correo electrónico y contraseña dentro de la plataforma, los cuales serán únicos e intransferibles por cliente.  "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Socio Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es la persona física asociada con "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="a través de un "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Contrato de Franquicia, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="quien prestará vía subcontratación los servicios ofertados por "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="de forma no exclusiva en las diversas plazas donde "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="establezca la prestación de sus servicios dentro de la República Mexicana o el extranjero. Cuya persona previa a formar parte de la "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Red de Socios Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="deberá estar debidamente calificada y certificada a través de los estándares de seguridad de la plataforma "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Transacción Autorizada.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es la adquisición y/o utilización de los servicios "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="por parte de los clientes y/o usuarios, una vez que hayan sido completados en su totalidad, ya sea en la proveeduría de moneda, proveeduría de efectivo y/o recolección de valores, habiéndose cerrado el circulo desde el levantamiento de solicitud hasta la entrega de los servicios, o en su caso de la cancelación extemporánea de los mismos por parte del cliente y que por tanto aplique algún cargo por compensación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Conductas Ilícitas.- Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="se reserva el derecho a llevar a cabo las acciones legales que considere pertinentes para suspender de manera automática, temporal o definitiva, a cualesquier cliente y/o usuario en caso de detectar fraudes, conductas fraudulentas, malas prácticas, uso indebido ó ilegal de métodos de pago dentro de la plataforma, así como por el incumplimiento de los términos y condiciones de uso de la plataforma "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="o bien por así convenir a sus intereses. La suspensión temporal será por el tiempo que considere prudente el Corporativo "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss. "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="En caso de incumplimiento o conducta ilícita, el cliente y/o usuario "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="será informado mediante correo electrónico de la suspensión temporal y/o definitiva del uso de la plataforma, otorgándole 2 (dos) días hábiles para que pueda en todo caso proporcionar la documentación que respalde la transacción que haya sido considerada fraudulenta o incumplimiento de términos y condiciones; en caso de no recibir respuesta en ese término, "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="procederá a suspender temporal o definitiva, según la gravidez, la cuenta del cliente y/o usuario."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Cancelación Voluntaria.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="El cliente y/o usuario podrá en todo momento solicitar vía correo electrónico la cancelación voluntaria de su cuenta "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="el cual deberá contener la siguiente información: nombre completo del usuario, correo electrónico, carta simple con los motivos debidamente firmada y enviada escaneada en conjunto con el correo, copia identificación oficial vigente; para lo cual, una vez recibido dicho correo, el personal de "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="revisará y dará seguimiento a la solicitud de cancelación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Generales.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Por el acto de registrarse en la plataforma "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="los clientes y/o usuarios se sujetan, aceptan y obligan a cumplir los términos, normas, condiciones y políticas vigentes de la plataforma, mismas que se incluyen en el presente documento o en las versiones subsecuentes que emita "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Bajo protesta de decir verdad el cliente y/o usuario "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="declara que todos los datos que nos proporciona para su registro en su perfil, dentro de la cuenta "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="son fidedignos, correctos y actualizados, por tanto, "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="asume desde este momento que el domicilio declarado por el cliente y/o usuario en su registro, será considerado como su lugar de residencia para todos los efectos legales a que haya lugar. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Morralla Express S.A. de C.V. será la única autorizada para resolver todo asunto relativo a "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="reservándose el derecho de aplicar e interpretar los presentes términos y condiciones y su alcance, así como resolver a su libre voluntad cualesquier situación no considerada en las mismas. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Todo tratamiento de datos personales realizado por "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="será efectuado conforme a la Ley y Reglamento aplicable en la República Mexicana, así como en sujeción a lo previsto en el Aviso de Privacidad de "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="que usted acepto a su registro en la plataforma, el cual podrá consultar en todo momento en el apartado legal de esta aplicación. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="De conformidad a la Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita y derivado de que las actividades realizadas tanto por los clientes como por los "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socios Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="pueden ser consideradas por dicha normativa como actividades vulnerables, "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="compartirá sus datos personales con las autoridades correspondientes, a efecto de cumplir con la norma descrita. Así pues, la información que derive de Avisos que se presenten ante autoridades competentes, será utilizada exclusivamente para la prevención, identificación, investigación y sanción de operaciones con recursos de procedencia ilícita y demás delitos relacionados. Los datos personales se mantendrán en todo momento en resguardo absoluto en sujeción a las normas aplicables."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Legislación y Competencia.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Todos los derechos y obligaciones que resulten de los términos y condiciones se regirán por las leyes aplicables en la ciudad de Hermosillo, Sonora; asimismo, los términos y condiciones serán sujetos a la interpretación, cumplimiento y competencia de los Tribunales de la ciudad de Hermosillo, Sonora, México, renunciando el cliente y/o usuario desde este momento a cualesquier otro fuero que por razón de su domicilio presente o futuro pudiere corresponderle."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Límite Responsabilidad.- Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="no tendrá responsabilidad en caso de que no pueda cumplir con estos términos y condiciones debido a causas de fuerza mayor o caso fortuito u impedimento legal o por cualesquier otra razón fuera de su control. Es preciso señalar que los servicios básicamente se circunscriben al manejo logístico y/o administración de dinero en moneda nacional y que por tanto "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="no aglutina, ni concentra, ni emite, ni dispone de valores en moneda nacional, sino que solo es un medio de contacto entre quien lo posee o detenta momentáneamente y quien lo requiere, por tanto la disponibilidad es limitada y a su vez en la misma proporción la responsabilidad de proveerlo. Por ello, "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="sólo se compromete a proveer sus servicios hasta el limite de inventario que puedan obtener, disponer o poseer sus "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Socios Morrexss "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="al momento del levantamiento de las diversas ordenes de servicio de los clientes y/o usuarios "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Sitio Web ó Página Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Es el sitio web disponible al público en general https://www.morrexss.com"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14"> 
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Centro de Atención Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Se refiere al departamento de atención a clientes y socios, que presta sus servicios a través de los siguientes medios y horarios:"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource BlackLabel}" Text="Teléfono.- 01800 MORREXS" FontSize="14"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Correo.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="atencion@morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackLabel}" Text="Página Web "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="www.morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource BlackLabel}" Text="Watsup: (662)1234567" FontSize="14"/>
+            <Label Style="{StaticResource BlackLabel}" Text="Horario: Lunes a Sábado de 8:00 am a 18:00 pm " FontSize="14"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource BlackBold}" Text="Términos y Condiciones Morrexss.- "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="Son los presentes términos y condiciones que se describen en este apartado, así como los demás relacionados con la plataforma "/>
+                        <Span Style="{StaticResource BlackBold}" Text="Morrexss, "/>
+                        <Span Style="{StaticResource BlackLabel}" Text="en los que consten los pasos, descripciones y restricciones para registrarse en la misma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="Ultima actualización 04 de febrero del 2020." Style="{StaticResource BlackBold}" Margin="0,20" FontSize="14"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

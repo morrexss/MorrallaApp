@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Login.RegisterFranqPage"
+             Padding="30, 0"
+             NavigationPage.BackButtonTitle=""
+             BackgroundColor="White">
+      <NavigationPage.TitleView>
+            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20"/>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout >
+            <Label Text="Información Básica" Style="{StaticResource BlackBold}" FontSize="20" Margin="15,20,15,10" HeightRequest="35" HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="Correo electrónico" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,20,0,0"/>
+            <ctrls:CustomEntry Text="{Binding Email.Value}" Placeholder="Tu correo" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+            <Label Text="{Binding Email.ErrorMessage}" IsVisible="{Binding Email.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+
+            <Label Text="Nombres" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,10,0,0"/>
+            <ctrls:CustomEntry Text="{Binding Name.Value}" Placeholder="Escribe tu nombre" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+            <Label Text="{Binding Name.ErrorMessage}" IsVisible="{Binding Name.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+
+            <Label Text="Apellido" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,10,0,0"/>
+
+            <StackLayout Orientation="Horizontal">
+
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <ctrls:CustomEntry Text="{Binding LastName.Value}" Placeholder="Paterno" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                    <Label Text="{Binding LastName.ErrorMessage}" IsVisible="{Binding LastName.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <ctrls:CustomEntry Text="{Binding SecondLastName.Value}" Placeholder=" Materno" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                    <Label Text="{Binding SecondLastName.ErrorMessage}" IsVisible="{Binding SecondLastName.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+                </StackLayout>
+            </StackLayout>
+            
+            <Label Text="Teléfono" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,10,0,0"/>
+            <ctrls:CustomEntry Text="{Binding PhoneNumber.Value}" Placeholder=" (555) 555-5555" Keyboard="Telephone" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+            <Label Text="{Binding PhoneNumber.ErrorMessage}" IsVisible="{Binding PhoneNumber.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+
+            <Label Text="¿Tienes motocicleta o vehículo?" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,10,0,0"/>
+            <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+                <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                    <ctrls:CustomPicker Image="Filled.png" Title="Selecciona"   SelectedItem="{Binding Vehicle.Value}"
+                                     HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                        <ctrls:CustomPicker.Items>
+                            <x:String>Si</x:String>
+                            <x:String>No</x:String>
+                        </ctrls:CustomPicker.Items>
+                    </ctrls:CustomPicker>
+                </StackLayout>
+            </Frame>
+            <Label Text="{Binding Vehicle.ErrorMessage}" IsVisible="{Binding Vehicle.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"/>
+
+            <Button Text="Registrar" CornerRadius="15" Style="{StaticResource MorrallaButton}" Command="{Binding RegisterCommand}" Margin="0, 20" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

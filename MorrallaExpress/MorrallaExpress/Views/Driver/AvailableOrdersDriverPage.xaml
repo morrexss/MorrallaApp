@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:Templates="clr-namespace:MorrallaExpress.Views.Orders.Templates"
+             xmlns:Converters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:PrismBehaviors="clr-namespace:MorrallaExpress.Behaviors"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.AvailableOrdersDriverPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="OrderTemplate">
+                <Templates:OrderTemplate />
+            </DataTemplate>
+            <Converters:ItemTappedEventArgsConverter x:Key="ItemTappedArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Actualizar" Order="Primary" Command="{Binding RefreshCommand}" Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <ListView ItemsSource="{Binding Orders, Mode=TwoWay}" IsVisible="{Binding Lista}" 
+                          RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" IsPullToRefreshEnabled="True" 
+                          SelectedItem="{Binding SelectItem}" ItemTemplate="{StaticResource OrderTemplate}" 
+                          RowHeight="200" >
+                    <ListView.Behaviors>
+                        <PrismBehaviors:EventToCommandBehavior Command="{Binding ToDetailCommand}"
+                        EventName="ItemTapped" EventArgsConverter="{StaticResource ItemTappedArgsConverter}" />
+                    </ListView.Behaviors>
+                </ListView>
+            </ScrollView>
+            <ContentView IsVisible="{Binding NoServiceView}" BackgroundColor="White">
+                    <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image Source="Disable.png" HeightRequest="100" Margin="30"/>
+                    <StackLayout>
+                            <Label Text="Servicio desactivado" HorizontalOptions="CenterAndExpand" Style="{StaticResource BlackBold}" TextColor="#e9505b"/>
+                            <Label  Style="{StaticResource BlackLabel}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="Para conectarte dirígete hacia "/>
+                                        <Span Text="Mi perfil" Style="{StaticResource BlackBold}" TextColor="{StaticResource MorrallaColor}">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                <!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="Disable.png" HeightRequest="100" Margin="30"/>
+                    <Label Text="Servicio desactivado" FontSize="22" HorizontalTextAlignment="Center" />
+                    <Label Text="Para conectarte dirígete hacia ''Mi Perfil''" FontSize="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>-->
+            </ContentView>
+            <ContentView IsVisible="{Binding EmptyView}">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="Pay.png" HeightRequest="120"/>
+                    <Label Text="No hay ninguna orden disponible" FontSize="20" HorizontalTextAlignment="Center" Margin="30"  FontFamily="{StaticResource HelveticaNeueBold}" TextColor="#868fa7"/>
+                </StackLayout>
+            </ContentView>
+            <!--
+                <AbsoluteLayout VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                    <Button Text="+" Command="{Binding RefreshCommand}" Style="{StaticResource AddButton}"/>
+                </AbsoluteLayout>
+            -->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Account.EditProfilePage"
+             NavigationPage.BackButtonTitle="">
+      <NavigationPage.TitleView>
+            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="30">
+                
+                <custom:CircleImage Source="{Binding DisplayImage}" BackgroundColor="Transparent" HeightRequest="103">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectPictureCommand}"/>
+                    </Image.GestureRecognizers>
+                </custom:CircleImage>
+
+                <Label Text="Correo eletrónico" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                <ctrls:CustomEntry Text="{Binding Email.Value}" IsEnabled="False" HeightRequest="45" HorizontalOptions="FillAndExpand" CornerRadius="30"
+                                   Style="{StaticResource FormEntry}"  FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+
+                <Label Text="Nombres" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                <ctrls:CustomEntry Text="{Binding Name.Value}"  HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                <Label Text="{Binding Name.ErrorMessage}" IsVisible="{Binding Name.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>
+
+                <Label Text="Apellidos" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                <ctrls:CustomEntry Text="{Binding LastName.Value}"  HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                <Label Text="{Binding LastName.ErrorMessage}" IsVisible="{Binding LastName.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>
+
+                <!--<Entry Text="{Binding CompanyName.Value}" Placeholder="Nombre comercial" Style="{StaticResource FormEntry}"
+                    HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding CompanyName.ErrorMessage}" IsVisible="{Binding CompanyName.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>-->
+                <Label Text="Teléfono" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                <ctrls:CustomEntry Text="{Binding Phone.Value}"  HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                <Label Text="{Binding Phone.ErrorMessage}" IsVisible="{Binding Phone.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>
+
+                <Label Text="Cambiar contraseña" TextColor="#0c7fff" FontSize="15" FontFamily="{StaticResource NunitoRegular}" Margin="0,20,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangePasswordCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <!--<Entry Text="{Binding FiscalAddress.Value}" Placeholder="Dirección (Calle # colonia y delegación)" Style="{StaticResource FormEntry}"
+                       HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding FiscalAddress.ErrorMessage}" IsVisible="{Binding FiscalAddress.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>-->
+
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand">-->
+                <!--<Picker SelectedItem="{Binding FiscalState.Value}" Title="Estado" HorizontalOptions="FillAndExpand"
+                               Style="{StaticResource BasicPicker}" ItemsSource="{Binding States}" ItemDisplayBinding="{Binding Name}" />
+                <Label Text="{Binding FiscalState.ErrorMessage}" IsVisible="{Binding FiscalState.IsValid, Converter={StaticResource ReverseBool}}"
+                               Style="{StaticResource InvalidField}"/>-->
+                <!--</StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">-->
+                <!--<Picker SelectedItem="{Binding FiscalCity.Value}" Title="Ciudad" HorizontalOptions="FillAndExpand"
+                               Style="{StaticResource BasicPicker}" ItemsSource="{Binding FiscalState.Value.Cities}" ItemDisplayBinding="{Binding Name}" />
+                <Label Text="{Binding FiscalCity.ErrorMessage}" IsVisible="{Binding FiscalCity.IsValid, Converter={StaticResource ReverseBool}}"
+                               Style="{StaticResource InvalidField}"/>-->
+                <!--</StackLayout>
+                </StackLayout>-->
+
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Entry Text="{Binding FiscalDelegation.Value}" Placeholder="Delegación" Style="{StaticResource FormEntry}"
+                            HorizontalOptions="FillAndExpand"/>
+                        <Label Text="{Binding FiscalDelegation.ErrorMessage}" IsVisible="{Binding FiscalDelegation.IsValid, Converter={StaticResource ReverseBool}}"
+                            Style="{StaticResource InvalidField}"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">-->
+                <!--<Entry Text="{Binding FiscalPostalCode.Value}" Keyboard="Numeric" Placeholder="Código postal" Style="{StaticResource FormEntry}"
+                            HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding FiscalPostalCode.ErrorMessage}" IsVisible="{Binding FiscalPostalCode.IsValid, Converter={StaticResource ReverseBool}}"
+                            Style="{StaticResource InvalidField}"/>-->
+                <!--</StackLayout>
+                </StackLayout>-->
+
+                <Button Text="Guardar" Style="{StaticResource FormButton}" CornerRadius="10" Command="{Binding UpdateCommand}" Margin="0,20" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

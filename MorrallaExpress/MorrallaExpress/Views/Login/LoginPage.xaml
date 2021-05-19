@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Login.LoginPage" BackgroundColor="White">
+    <ScrollView Padding="0">
+            <StackLayout Margin="30">
+            <Image Source="ImageLogo" HeightRequest="36" Margin="0,0,0,30"/>
+            <Label Text="Correo electrónico" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+            <ctrls:CustomEntry Text="{Binding Email.Value}" HorizontalOptions="FillAndExpand" Keyboard="Email" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+            <Label Text="{Binding Email.ErrorMessage}" IsVisible="{Binding Email.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"  FontSize="15" TextColor="#ff2e5a"/>
+
+            <Label Text="Contraseña" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+            <Grid>
+                <ctrls:CustomEntry x:Name="WidthRequestPassword" Text="{Binding Password.Value}" IsPassword="{Binding IsPassword}" HorizontalOptions="FillAndExpand"  HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                <Image Source="Eye" HorizontalOptions="End" WidthRequest="24" HeightRequest="24" Margin="0, 0, 10, 0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowPasswordCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+               
+            <Label Text="{Binding Password.ErrorMessage}"  IsVisible="{Binding Password.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}"  FontSize="15" TextColor="#ff2e5a"/>
+
+            <Label Text="¿Olvidaste tu contraseña?" TextColor="#0c7fff" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" Margin="0,10,0,20" FontFamily="{StaticResource HelveticaNeue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToForgotPasswordCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+            <Button Text="Iniciar Sesión" CornerRadius="15" Command="{Binding LoginCommand}" Style="{StaticResource MorrallaButton}"/>
+            <FlexLayout  VerticalOptions="Start" Margin="0,20" JustifyContent="Center">
+                <BoxView HeightRequest=".5" BackgroundColor="{StaticResource GrayColor2}" VerticalOptions="Center" WidthRequest="50" Margin="0,10,10,0"/>
+                <Label Text="Ó Regístrate como:"  FontFamily="{StaticResource HelveticaNeue}" TextColor="#868fa7"/>
+                <BoxView HeightRequest="0.5" BackgroundColor="{StaticResource GrayColor2}" VerticalOptions="Center" WidthRequest="50" Margin="10,10,0,0"/>
+            </FlexLayout>
+            <StackLayout VerticalOptions="Start">
+                <Button Text="Cliente" CornerRadius="15" Command="{Binding ToClientRegisterCommand}" HorizontalOptions="FillAndExpand" FontSize="15" FontFamily="{StaticResource HelveticaNeueBold}"  
+                    BackgroundColor="White" TextColor="#868fa7" BorderColor="{StaticResource MorrallaColor2}" BorderWidth="1"  VerticalOptions="StartAndExpand"/>
+                <Button Text="Socio Morrexss" Command="{Binding ToFreqRegisterCommand}" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource HelveticaNeueBold}"  FontSize="15"  Margin="0,10,0,30" 
+                    BackgroundColor="White" TextColor="#868fa7" BorderColor="{StaticResource MorrallaColor2}" BorderWidth="1" CornerRadius="15" VerticalOptions="StartAndExpand"/>
+            </StackLayout>
+            </StackLayout>
+    </ScrollView>
+</ContentPage>

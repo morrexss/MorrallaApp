@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Account.LocationsPage"
+             xmlns:Templates="clr-namespace:MorrallaExpress.Views.Account.Templates"
+             xmlns:Converters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:PrismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="LocationTemplate">
+                <Templates:LocationListItemTemplate />
+            </DataTemplate>
+            <Converters:ItemTappedEventArgsConverter x:Key="ItemTappedArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <ListView ItemsSource="{Binding Locations, Mode=TwoWay}" IsVisible="{Binding Lista}"
+                          ItemTemplate="{StaticResource LocationTemplate}" RowHeight="170" IsPullToRefreshEnabled="True" SeparatorVisibility="None"
+                          IsRefreshing="{Binding IsListRefreshing}" RefreshCommand="{Binding RefreshListCommand}" SelectionMode="None">
+                    <ListView.Behaviors>
+                        <PrismBehaviors:EventToCommandBehavior Command="{Binding ToDetailCommand}"
+                        EventName="ItemTapped" EventArgsConverter="{StaticResource ItemTappedArgsConverter}" />
+                    </ListView.Behaviors>
+                </ListView>
+            </ScrollView>
+            
+            <ContentView IsVisible="{Binding EmptyView}">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="Pay.png" HeightRequest="120"/>
+                    <Label Text="No tienes ninguna sucursal agregada" FontSize="22" HorizontalTextAlignment="Center" Margin="30"/>
+                </StackLayout>
+            </ContentView>
+
+            <AbsoluteLayout VerticalOptions="End" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
+                <Button Text="+" Command="{Binding ToDetailCommand}" Style="{StaticResource AddButton}"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

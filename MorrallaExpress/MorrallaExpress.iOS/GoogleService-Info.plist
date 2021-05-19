@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>400654555303-khqb3770tu88u8s8d07l9scvat0llnuf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.400654555303-khqb3770tu88u8s8d07l9scvat0llnuf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAslvHLyn6_FWqj023SLVgyO5QepCmG_Ug</string>
+	<key>GCM_SENDER_ID</key>
+	<string>400654555303</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.xipetechnology.MorrallaExpress</string>
+	<key>PROJECT_ID</key>
+	<string>morrexss-21216</string>
+	<key>STORAGE_BUCKET</key>
+	<string>morrexss-21216.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:400654555303:ios:16e4fa6ef26675eb8aa382</string>
+	<key>DATABASE_URL</key>
+	<string>https://morrexss-21216.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>MorrallaExpress</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.morrexss.app</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para utlizar el calendario.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para utlizar la cámara.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para el carrete de fotos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para utilizar el microfono.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para añadir fotos a tu galeria.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome5Brands.otf</string>
+		<string>FontAwesome5Regular.otf</string>
+		<string>FontAwesome5Solid.otf</string>
+	</array>
+	<key>Custom Property</key>
+	<array>
+		<string>FontAwesome5BrandsRegular.otf</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>Morrexss</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Morralla Express necesita tu permiso para utilizar la geolocalización.</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+</dict>
+</plist>

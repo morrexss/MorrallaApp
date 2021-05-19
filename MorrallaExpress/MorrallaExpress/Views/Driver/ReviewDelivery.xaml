@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.ReviewDelivery">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Margin="40" >
+                <FlexLayout  JustifyContent="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HeightRequest="110" >
+                    <custom:CircleImage   Source="{Binding Photo}" />
+                </FlexLayout>
+
+                <Label Text="{Binding DriverName}" Style="{StaticResource BlackBold}" HorizontalOptions="CenterAndExpand" Margin="0,10,0,30"  />
+                <Label Text="Califica el servicio del Socio Morrexss" Style="{StaticResource GrayLabel}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,10">
+                    <StackLayout>
+                        <Image Source="Oro.png" WidthRequest="61" HeightRequest="61" Opacity="{Binding Op3}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeRatingCommand}" CommandParameter="3"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Oro" FontAttributes="Bold" Style="{StaticResource BlackLabel}" HorizontalTextAlignment="Center" Opacity="{Binding Op3}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Image Source="Plata.png" WidthRequest="61" HeightRequest="61" Opacity="{Binding Op2}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeRatingCommand}" CommandParameter="2"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Plata" FontAttributes="Bold" Style="{StaticResource BlackLabel}" HorizontalTextAlignment="Center" Opacity="{Binding Op2}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Image Source="Bronze.png" WidthRequest="61" HeightRequest="61" Opacity="{Binding Op1}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeRatingCommand}" CommandParameter="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Bronce" FontAttributes="Bold" Style="{StaticResource BlackLabel}" HorizontalTextAlignment="Center" Opacity="{Binding Op1}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="Reseña breve sobre la calificación" Margin="0,20,0,0" Style="{StaticResource GrayLabel}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+
+                <controls:CustomEditor Margin="0,10" HeightRequest="120" MaxLength="100" BackgroundColor="#f5f6f8" Style="{StaticResource BlackLabel}" Placeholder="Escribe un comentario" Text="{Binding Review.Value}"/>
+
+                <Label Text="{Binding Review.ErrorMessage}" IsVisible="{Binding Review.IsValid, Converter={StaticResource ReverseBool}}" Style="{StaticResource InvalidField}" TranslationY="-8"/>
+
+                <Button Text="Calificar" Margin="0,15" CornerRadius="15" Style="{StaticResource FormButton}" Command="{Binding SaveReviewCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

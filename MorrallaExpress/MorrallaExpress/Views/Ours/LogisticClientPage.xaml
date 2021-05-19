@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Ours.LogisticClientPage"
+             IconImageSource="Path.png"
+             Title="Logística">
+    <ScrollView>
+        <StackLayout>
+            <Label TextColor="Black" FontSize="20" Margin="20" HorizontalOptions="CenterAndExpand" Text="Logística" Style="{StaticResource BlackBold}"/>
+            <Frame Margin="20,0,20,0" CornerRadius="20" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                <StackLayout Margin="5">
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="1. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Elige el punto de venta donde deseas el servicio."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="2. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Elige tu método de pago."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="3. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Pide tu morralla en las denominaciones que necesites."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="4. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Se aceptará tu orden por un Socio Morrexss."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="5. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Dale seguimiento a tu orden."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="6. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Recibe tu morralla contra entrega de efectivo."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="7. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Cuenta ó pesa tu morralla frente al Socio Morrexss."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="8. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Califica el servicio brindado por el Socio Morrexss."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label  Margin="0,5" Style="{StaticResource BlackLabel}" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="9. " TextColor="{StaticResource MorrallaColor}" FontFamily="{StaticResource NunitoBold}"/>
+                                    <Span Text="Se cierra y carga costo del servicio."/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                   </StackLayout>
+            </Frame>
+            <Frame Margin="20" CornerRadius="20" HasShadow="False" BackgroundColor="#f5f7f9" BorderColor="{StaticResource BorderColor}">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="ic_highlight.png" HeightRequest="20"/>
+                        <Label Text="En caso de cancelación: " Margin="10,0" Style="{StaticResource BlackBold}" FontAttributes="Bold" FontSize="14"/>
+                    </StackLayout>
+                    <Label Margin="36,10,26,0" Text="Tienes 2 minutos para cancelar sin costo tu orden una vez acepta." FontSize="14" Style="{StaticResource BlackLabel}"/>
+                    <Label Margin="36,5,26,0" Text="Después puedes cancelar tu orden bajo un costo mínimo. " FontSize="14" Style="{StaticResource BlackLabel}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

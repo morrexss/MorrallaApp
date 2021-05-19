@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Ours.ContactUsPage"
+             IconImageSource="Message.png"
+             Title="Contacto">
+    <StackLayout Margin="30,20,30,30">
+        <Label TextColor="Black" FontSize="20"  HorizontalOptions="CenterAndExpand" Text="Contáctanos" Style="{StaticResource BlackBold}"/>
+        <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+            <Image Source="iPhone_icn.png" HeightRequest="22" WidthRequest="14" VerticalOptions="Start"/>
+            <StackLayout Margin="17,0">
+                <Label Text="Teléfono: " Style="{StaticResource GrayLabel}"  />
+                <Label Text="{Binding TelMorrexss}" Style="{StaticResource BlackLabel}" FontSize="16">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenTelCommand}"   />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,10">
+            <Image Source="email.png" HeightRequest="16" WidthRequest="20" VerticalOptions="Start" TranslationY="3"/>
+            <StackLayout Margin="12,0">
+                <Label Text="Atención a clientes: " Style="{StaticResource GrayLabel}"  />
+                <Label Text="{Binding MailMorrexss}" Style="{StaticResource BlackLabel}" FontSize="16">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenMailCommand}"   />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,10">
+            <Image Source="email.png" HeightRequest="16" WidthRequest="20" VerticalOptions="Start" TranslationY="3"/>
+            <StackLayout Margin="12,0">
+                <Label Text="Aclaración de tarjetas: " Style="{StaticResource GrayLabel}"  />
+                <Label Text="{Binding ClarificationsMailMorrexss}" Style="{StaticResource BlackLabel}" FontSize="16">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenClarificationsMailCommand}"   />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,10">
+            <Image Source="MapPin_icn.png" HeightRequest="20" WidthRequest="14" VerticalOptions="Start"/>
+            <StackLayout Margin="20,0">
+                <Label Text="Ubicación: " Style="{StaticResource GrayLabel}"  />
+                <Label Text="Irineo Michel 62 Col. Las Palmas CP 83270  Hermosillo, Sonora" Style="{StaticResource BlackLabel}"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,10">
+            <Image Source="web.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Start" />
+            <StackLayout Margin="15,0">
+                <Label Text="Sitio web: " Style="{StaticResource GrayLabel}" />
+                <Label Text="{Binding WebMorrexss}" Style="{StaticResource BlackLabel}" FontSize="16">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenWebCommand}"   />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

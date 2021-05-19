@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MorrallaExpress.Views.Account.Templates.LocationListItemTemplate">
+    <ViewCell.View>
+        <Frame Margin="30,15,30,15" HeightRequest="120" CornerRadius="20" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+            <StackLayout  Margin="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" TextColor="#868fa7" FontFamily="{StaticResource NunitoBold}"/>
+                    <Image Source="trash" HeightRequest="17" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DeleteCommand}" CommandParameter="{Binding .}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout >
+                    <Label Text="{Binding FullAddress}" Style="{StaticResource BlackLabel}"/>
+                    <Label Text="{Binding CityandState}" Style="{StaticResource BlackLabel}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ViewCell.View>
+</ViewCell>

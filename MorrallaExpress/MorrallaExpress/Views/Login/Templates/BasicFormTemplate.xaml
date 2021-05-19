@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScrollView VerticalScrollBarVisibility="Never"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+            x:Class="MorrallaExpress.Views.Login.Templates.BasicFormTemplate"
+    x:Name="BasicInfoTemplate"
+    VerticalOptions="FillAndExpand"
+    Padding="15, 0"
+            BackgroundColor="White">
+    <StackLayout>
+        <Label Text="Correo electrónico" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,20,0,0"/>
+        <ctrls:CustomEntry Text="{Binding Email.Value}" Keyboard="Email" Placeholder="Tu correo" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding Email.ErrorMessage}" IsVisible="{Binding Email.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+        
+        <Label Text="Nombres" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding Name.Value}"  Placeholder="Nombres" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding Name.ErrorMessage}" IsVisible="{Binding Name.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Apellidos" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding LastName.Value}"  Placeholder="Apellidos" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding LastName.ErrorMessage}" IsVisible="{Binding LastName.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Telefono" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding Phone.Value}" Placeholder="Teléfono" HorizontalOptions="FillAndExpand" Keyboard="Telephone" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding Phone.ErrorMessage}" IsVisible="{Binding Phone.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Contraseña" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding Password.Value}" Placeholder="Contraseña" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding Password.ErrorMessage}" IsVisible="{Binding Password.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Confirmar contraseña" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding ConfirmPassword.Value}" Placeholder="Confirmar contraseña" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding ConfirmPassword.ErrorMessage}" IsVisible="{Binding ConfirmPassword.IsValid, Converter={StaticResource ReverseBool}}"
+           Style="{StaticResource InvalidField}"/>
+        <Button Text="Siguiente" CornerRadius="15" Command="{Binding ToStep2Command}" Style="{StaticResource MorrallaButton}" Margin="0, 20" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ScrollView>   

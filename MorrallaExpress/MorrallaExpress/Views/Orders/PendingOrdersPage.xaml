@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:Templates="clr-namespace:MorrallaExpress.Views.Orders.Templates"
+             xmlns:Converters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:PrismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Orders.PendingOrdersPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="OrderTemplate">
+                <Templates:OrderTemplate />
+            </DataTemplate>
+            <Converters:ItemTappedEventArgsConverter x:Key="ItemTappedArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Actualizar" Order="Primary" Command="{Binding RefreshCommand}" Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView Margin="0,0,0,30">
+                <ListView ItemsSource="{Binding Orders}" IsVisible="{Binding Lista}"
+                          RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" IsPullToRefreshEnabled="True"
+                          SelectedItem="{Binding SelectItem}" ItemTemplate="{StaticResource OrderTemplate}" RowHeight="200" >
+                    <ListView.Behaviors>
+                        <PrismBehaviors:EventToCommandBehavior Command="{Binding ToDetailCommand}"
+                        EventName="ItemTapped" EventArgsConverter="{StaticResource ItemTappedArgsConverter}" />
+                    </ListView.Behaviors>
+                </ListView>
+            </ScrollView>
+            <ContentView IsVisible="{Binding EmptyView}">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="30">
+                    <Image Source="Pay.png" HeightRequest="120" />
+                    <Label Text="¡No tienes órdenes pendientes!" HorizontalTextAlignment="Center" FontSize="20" Margin="30"  FontFamily="{StaticResource HelveticaNeueBold}" TextColor="#868fa7" />
+                    <!--<Button Text="Crear nueva orden" TranslationY="20" Style="{StaticResource FormButton}" Command="{Binding ToNewOrderPageCommand}" />-->
+                </StackLayout>
+            </ContentView>
+
+            <StackLayout VerticalOptions="End" HeightRequest="30" BackgroundColor="#6CA142">
+                <Button Text="Nueva orden" Command="{Binding ToNewOrderPageCommand}" BackgroundColor="#6CA142"  Padding="0" HeightRequest="30" TextColor="White" CornerRadius="5"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

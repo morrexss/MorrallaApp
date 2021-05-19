@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:converters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:controls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.CancelOrderClient">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:PickerItemSelectedEventArgsConverter x:Key="pickerItemSelectedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="40,30" >
+                    <FlexLayout  JustifyContent="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HeightRequest="110" >
+                        <custom:CircleImage   Source="Group_icn.png" />
+                    </FlexLayout>
+
+                    <Label Text="Indícanos el motivo por el cual deseas cancelar la orden:" Style="{StaticResource BlackBold}" Margin="10"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  VerticalOptions="Center"  />
+
+                    <Label Text="Escoge tu motivo" Style="{StaticResource GrayLabel}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+
+                    <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="46" HasShadow="False" BorderColor="{StaticResource BorderColor}" >
+                        <StackLayout Margin="10,0,0,0" Padding="6" x:Name="StackPicker">
+                            <controls:CustomPicker Image="Filled.png" Title="Selecciona" ItemsSource="{Binding ReasonList, Mode=TwoWay}" FontSize="15"  ItemDisplayBinding="{Binding Reason}" HorizontalOptions="FillAndExpand"
+                                                   TextColor="{StaticResource BlackMorralla}" FontFamily="{StaticResource NunitoRegular}" SelectedItem="{Binding SelectedReason}">
+                                <Picker.Behaviors>
+                                    <prism:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding OnReasonChangeCommand}"
+                                 />
+                                </Picker.Behaviors>
+                            </controls:CustomPicker>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Comentario" Style="{StaticResource GrayLabel}" IsVisible="{Binding SpecificationReason}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+                    <controls:CustomEditor Margin="0,10" HeightRequest="100"  MaxLength="100" BackgroundColor="#f5f6f8"
+                                           Placeholder="Especifique" FontSize="15" TextColor="{StaticResource BlackMorralla}"
+                                           FontFamily="{StaticResource NunitoRegular}" IsVisible="{Binding SpecificationReason}"
+                                           Text="{Binding ReasonString}"/>
+                    <Button Text="Cancelar" CornerRadius="15" Margin="0,20" Style="{StaticResource FormButton}" Command="{Binding CancelarCommand}" BackgroundColor="#d9534f" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+  
+</ContentPage>

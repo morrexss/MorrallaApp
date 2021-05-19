@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MorrallaExpress.Views.Templates.WelcomePageStep3">
+    <ContentView.Content>
+        <StackLayout Margin="30">
+            <Image Source="ImageLogo" HeightRequest="46" />
+            <Image Source="Step3.png" HeightRequest="180" VerticalOptions="CenterAndExpand" />
+            <Label Text="Confirma tu orden" TextColor="{StaticResource DarkGreen}" FontFamily="{StaticResource HelveticaNeueBold}"  HorizontalTextAlignment="Center" FontSize="25"  />
+            <Label Text="¡Así de sencillo!" FontFamily="{StaticResource HelveticaNeue}" TextColor="#868fa7" FontSize="16"  HorizontalTextAlignment="Center"/>
+            <Button VerticalOptions="EndAndExpand" CornerRadius="15" Text="Continuar" Command="{Binding BackCommand}" Style="{StaticResource MorrallaButton}"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

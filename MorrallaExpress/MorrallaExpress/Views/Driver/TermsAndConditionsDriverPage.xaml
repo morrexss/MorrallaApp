@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.TermsAndConditionsDriverPage">
+    <ScrollView>
+        <StackLayout Margin="30">
+            <Label TextColor="Black" FontSize="20"  HorizontalOptions="CenterAndExpand" Text="TÉRMINOS Y CONDICIONES" Style="{StaticResource PageTitle}"/>
+            <Label Style="{StaticResource LegalLabel}" Text="1.-ACERCA DE MORREXSS" Margin="0,5"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="MORREXSS"/>
+                        <Span Text=" es una plataforma de servicios especializada en facilitar una adecuada e integral administración del dinero, propiedad de Morralla Express, S.A de C.V., creada en el año 2006 por empresarios mexicanos."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="MORREXSS"/>
+                        <Span Text=" como empresa líder y pionera en México en el servicio de administración de fondos de caja a comercios en general, cuenta con más de 15 años de experiencia brindando seguridad, certeza y agilidad a miles de cajas registradoras de comercios en diversas partes del país, lo que ha ayudado a nuestros clientes a cerrar con más eficiencia sus ventas y transacciones con sus consumidores de bienes ó servicios."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="MORREXSS"/>
+                        <Span Text=" es originaria del Estado de Sonora, México, teniendo su sucursal matriz en la Ciudad de Hermosillo, asimismo, a través del sistema de franquicias ha aumentado su cobertura a ciudades como Tijuna, B.C., Mexicali, B.C., Mazatlan, Sin., Ciudad Obregón. Son., Tuxtla Gutiérrez, Chiapas, y Cancún, Quintana Roo."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Las Oficinas Corporativas de Morralla Express, S.A. de C.V. (MORREXSS) se encuentran ubicadas en Avenida Monteverde No.- 166, entre José S. Healy y Michoacan, Colonia San Benito, C.P. 83190, de la ciudad de Hermosillo, Sonora, México, Telefono (662) 2108990, Página Web "/>
+                        <Span Text="www.morrexss.com" TextColor="Blue"/>
+                        <Span Text=" y correo "/>
+                        <Span Text="atencion@morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="MORREXSS"/>
+                        <Span Text=" ahora se constituye como una de las plataformas más innovadoras en razón de su giro, al ofertar servicios únicos y originales, en base a la vasta experiencia en la logística del manejo de dinero de Morralla Express, SA de CV, cuya empresa pone a disposición de nuestros "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span Text="como tú, bajo el modelo de contrato de franquicia, una oportunidad empresarial rentable, confiable y sustentable."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource LegalLabel}" Text="2.-NUESTROS SERVICIO" Margin="0,5"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Servicios Morrexss: "/>
+                        <Span Text="Los servicios brindados por la plataforma digital "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="consisten en la facilitación, a empresas, comercios ó particulares que cuenten con caja registradora en sus negocios, de sus necesidades de moneda metálica ó papel billete en moneda nacional exclusivamente para el cierre de sus transacciones, así como la recolección de sus ventas mediante deposito inmediato de sus cortes, los cuales se ejecutan a través de los diversos "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span Text="adheridos bajo contrato de franquicia a esta plataforma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="       2.1.- Proveeduría Moneda Metálica: Morrexss " />
+                        <Span Text="a través de su plataforma ofrece la posibilidad de levantar solicitud de la cantidad en morralla o moneda que requieran sus clientes, en las denominaciones que necesite, bajo un empaque al detalle y estandarizado, que será atendida por un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="como usted, por una contraprestación con alto margen de rentabilidad; con lo cual usted, vía subcontratación en razón del contrato de franquicia evita vueltas, pérdida de tiempo y ventas infructuosas por falta de cambio a nuestros clientes finales, otorgándoles a éstos con su servicio, eficiencia, mayores ventas, menor fondo de caja, facilidad de arqueos y seguridad."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="       2.2.- Proveeduría de Efectivo: Morrexss  " />
+                        <Span Text="a través de su plataforma ofrece la posibilidad de levantar solicitud de la cantidad en efectivo o papel billete que requieran sus clientes, en las denominaciones que necesite, bajo un empaque al detalle y estandarizado, que será atendida por un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="como usted, por una contraprestación con alto margen de rentabilidad; con lo cual usted, vía subcontratación en razón del contrato de franquicia evita vueltas y pérdida de tiempo a nuestros clientes finales, otorgándoles a éstos con su servicio, la posibilidad de disponer de los recursos disponibles en sus tarjetas."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="       2.3.- Recolección de Valores: Morrexss  " />
+                        <Span Text="a través de su plataforma ofrece a sus clientes la posibilidad de levantar solicitud de la cantidad en efectivo que requieran se les recolecte y deposite vía SPEI, que será atendida por un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="como usted, por una contraprestación con alto margen de rentabilidad; con lo cual usted, vía subcontratación en razón del contrato de franquicia evita vueltas y pérdida de tiempo a nuestros clientes finales, otorgándoles a éstos con su servicio, seguridad en el manejo de sus recursos, así como la inmediatez o deposito instantáneo de sus cortes de caja o ventas, lo que le permite hacer más eficiente su operación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource LegalLabel}" Text="3.- TERMINOS Y CONDICIONES" Margin="0,5"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Nota Importante.- "/>
+                        <Span Text=" El "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="deberá contabilizar los valores recibidos o recolectados en el cierre de cada servicio, tanto en la entrega de moneda metálica como de efectivo, así como en la recolección de valores efectuadas a nuestros clientes finales, a efecto de corroborar que las cantidades sean las correctas, ya que no se podrá reclamar al cliente final con posterioridad al cierre de los servicios alguna discrepancia o error. Por tanto, "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="se deslinda de toda responsabilidad generada por la omisión por parte del "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="de contabilizar las cantidades objeto del servicio y/o por la incorrecta contabilización de los mismos. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Aplicación Morrexss.- "/>
+                        <Span Text="Es el programa digital propiedad de Morralla Express, S.A. de C.V., que puede ser instalado por el "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="en sus dispositivos móviles, la cual permite realizar las actividades relacionadas con los servicios ofertados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="a sus clientes finales, conforme a sus términos y condiciones los cuales podrán ser consultados en la página web y/o al descargar referida aplicación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Contraseña Morrexss.- "/>
+                        <Span Text="Es la clave designada por el "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="al realizar su registro en la plataforma, con la cual podrá acceder y/o administrar su cuenta "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="en la pagina web, así como en la aplicación móvil, la cual sirve para poder utilizar la plataforma y acceder a los servicios prestado por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="al cliente."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Cuenta Morrexss.- "/>
+                        <Span Text="Es la cuenta individual de cada "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="desde donde acepta las ordenes de servicio que desee prestar vía subcontratación a los clientes finales, donde registra sus datos fiscales, de identificación y perfil, donde puede visualizar sus estados de cuenta, historial de servicio, sus calificación y monto de comisiones, así como la acumulación de su información de servicio."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Sucursales Cliente Morrexss.- "/>
+                        <Span Text="Son los puntos de venta donde desea el cliente final ser atendido por un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss, "/>
+                        <Span Text="con alguno de los servicios ofertados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="a través de su plataforma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Cliente Morrexss.- "/>
+                        <Span Text="Es el usuario o destinatario final de los servicios ofertados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="quien se identificará con correo electrónico y contraseña dentro de la plataforma, los cuales serán únicos e intransferibles por cliente.  "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss.- "/>
+                        <Span Text="Es la persona física asociada con "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="a través de un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Contrato de Franquicia, "/>
+                        <Span Text="quien prestará vía subcontratación los servicios ofertados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="de forma no exclusiva en las diversas plazas donde "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="establezca la prestación de sus servicios dentro de la República Mexicana o el extranjero. Cuya persona previa a formar parte de la "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Red de Socios Morrexss, "/>
+                        <Span Text="deberá estar debidamente calificada y certificada a través de los estándares de seguridad de la plataforma "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Transacción Autorizada.- "/>
+                        <Span Text="Es la adquisición y/o utilización de los servicios "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="por parte de los clientes y/o usuarios, una vez que hayan sido completados en su totalidad, ya sea en la proveeduría de moneda, proveeduría de efectivo y/o recolección de valores, habiéndose cerrado el circulo desde el levantamiento de solicitud hasta la entrega de los servicios por un "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss, "/>
+                        <Span Text="o en su caso de la cancelación extemporánea de los mismos por parte del cliente y que por tanto aplique algún cargo por compensación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Conductas Ilícitas.- Morrexss "/>
+                        <Span Text="se reserva el derecho a llevar a cabo las acciones legales que considere pertinentes para suspender de manera automática, temporal o definitiva, a cualesquier "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="en caso de detectar fraudes, conductas fraudulentas, malas prácticas, uso indebido ó ilegal de la plataforma, así como por el incumplimiento de los términos y condiciones de uso de la plataforma "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="o bien por así convenir a sus intereses. La suspensión temporal será por el tiempo que considere prudente " />
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss. "/>
+                        <Span Text="En caso de incumplimiento o conducta ilícita, el " />
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="será informado mediante correo electrónico de la suspensión temporal y/o definitiva del uso de la plataforma, otorgándole 2 (dos) días hábiles para que pueda en todo caso proporcionar la documentación que respalde la transacción que haya sido considerada fraudulenta o incumplimiento de términos y condiciones; en caso de no recibir respuesta en ese término, "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="procederá a suspender temporal o definitiva, según la gravidez, la cuenta del " />
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Cancelación Voluntaria.- "/>
+                        <Span Text="El "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="podrá en todo momento solicitar vía correo electrónico la cancelación voluntaria de su cuenta "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="el cual deberá contener la siguiente información: nombre completo del socio, correo electrónico, carta simple con los motivos debidamente firmada y enviada escaneada en conjunto con el correo, copia identificación oficial vigente; para lo cual, una vez recibido dicho correo, el personal de "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="revisará y dará seguimiento a la solicitud de cancelación."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Generales.- "/>
+                        <Span Text="Por el acto de registrarse en la plataforma "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="los socios se sujetan, aceptan y obligan a cumplir los términos, normas, condiciones y políticas vigentes de la plataforma, mismas que se incluyen en el presente documento o en las versiones subsecuentes que emita "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bajo protesta de decir verdad el "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss "/>
+                        <Span Text="declara que todos los datos que nos proporciona para su registro en su perfil, dentro de la cuenta "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="son fidedignos, correctos y actualizados, por tanto, "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="asume desde este momento que el domicilio declarado por el socio en su registro, será considerado como su lugar de residencia para todos los efectos legales a que haya lugar. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Morralla Express S.A. de C.V. será la única autorizada para resolver todo asunto relativo a "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="reservándose el derecho de aplicar e interpretar los presentes términos y condiciones y su alcance, así como resolver a su libre voluntad cualesquier situación no considerada en las mismas. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Todo tratamiento de datos personales realizado por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="será efectuado conforme a la Ley y Reglamento aplicable en la República Mexicana, así como en sujeción a lo previsto en el Aviso de Privacidad de "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="que usted acepto a su registro en la plataforma, el cual podrá consultar en todo momento en el apartado legal de esta aplicación. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="De conformidad a la Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita y derivado de que las actividades realizadas tanto por los clientes como por los "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span Text="pueden ser consideradas por dicha normativa como actividades vulnerables, "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="compartirá sus datos personales con las autoridades correspondientes, a efecto de cumplir con la norma descrita. Así pues, la información que derive de Avisos que se presenten ante autoridades competentes, será utilizada exclusivamente para la prevención, identificación, investigación y sanción de operaciones con recursos de procedencia ilícita y demás delitos relacionados. Los datos personales se mantendrán en todo momento en resguardo absoluto en sujeción a las normas aplicables."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Legislación y Competencia.- "/>
+                        <Span Text="Todos los derechos y obligaciones que resulten de los términos y condiciones se regirán por las leyes aplicables en la ciudad de Hermosillo, Sonora; asimismo, los términos y condiciones serán sujetos a la interpretación, cumplimiento y competencia de los Tribunales de la ciudad de Hermosillo, Sonora, México, renunciando el "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span Text="desde este momento a cualquier otro fuero que por razón de su domicilio presente o futuro pudiere corresponderle."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Límite Responsabilidad.- Morrexss "/>
+                        <Span Text="no tendrá responsabilidad en caso de que no pueda cumplir con estos términos y condiciones debido a causas de fuerza mayor o caso fortuito u impedimento legal o por cualesquier otra razón fuera de su control. Es preciso señalar que los servicios básicamente se circunscriben al manejo logístico y/o administración de dinero en moneda nacional y que por tanto "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="no aglutina, ni concentra, ni emite, ni dispone de valores en moneda nacional, sino que solo es un medio de contacto entre quien lo posee o detenta momentáneamente y quien lo requiere, por tanto la disponibilidad es limitada y a su vez en la misma proporción la responsabilidad de proveerlo. Por ello, "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="sólo se compromete a proveer sus servicios hasta el limite de inventario que puedan obtener, disponer o poseer sus "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span Text="al momento del levantamiento de las diversas ordenes de servicio de los clientes y/o usuarios "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Sitio Web ó Página Morrexss.- "/>
+                        <Span Text="Es el sitio web disponible al público en general https://www.morrexss.com"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Centro de Atención Morrexss.- "/>
+                        <Span Text="Se refiere al departamento de atención a clientes y socios, que presta sus servicios a través de los siguientes medios y horarios:"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="Teléfono.- 01800 MORREXS" FontSize="14"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Correo.- "/>
+                        <Span Text="atencion@morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Página Web "/>
+                        <Span Text="www.morrexss.com" TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="Watsup: (662)1234567" FontSize="14"/>
+            <Label Text="Horario: Lunes a Sábado de 8:00 am a 18:00 pm " FontSize="14"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Términos y Condiciones Morrexss.- "/>
+                        <Span Text="Son los presentes términos y condiciones que se describen en este apartado, así como los demás relacionados con la plataforma "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="en los que consten los pasos, descripciones y restricciones para registrarse en la misma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="Ultima actualización 04 de febrero del 2020." FontAttributes="Bold" TextColor="Black" Margin="0,20" FontSize="14"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

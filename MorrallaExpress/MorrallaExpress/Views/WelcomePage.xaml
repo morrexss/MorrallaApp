@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:PrismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:Cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:Templates="clr-namespace:MorrallaExpress.Views"
+             x:Class="MorrallaExpress.Views.WelcomePage"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <Templates:WelcomeTemplateSelector x:Key="WelcomeSelector" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="0" Margin="0,20, 0,0" VerticalOptions="FillAndExpand">
+            <Cv:CarouselViewControl Orientation="Horizontal" InterPageSpacing="10"  Position="{Binding Position}"
+                                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  ItemsSource="{Binding CarouselLista , Mode=TwoWay}"
+                                    ItemTemplate="{StaticResource WelcomeSelector}" ShowIndicators="True" IndicatorsTintColor="#e1f1d9" IndicatorsShape="Circle" CurrentPageIndicatorTintColor="{StaticResource MorrallaColor2}">
+                <Cv:CarouselViewControl.Behaviors>
+                    <PrismBehaviors:EventToCommandBehavior EventName="PositionSelected"  Command="{Binding OnPositionSelectedCommand}" />
+                </Cv:CarouselViewControl.Behaviors>
+            </Cv:CarouselViewControl>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+             xmlns:converterPack="clr-namespace:Xamarin.Forms.ConvertersPack;assembly=Xamarin.Forms.ConvertersPack"
+             xmlns:Converters="clr-namespace:MorrallaExpress.Converters;assembly=MorrallaExpress"
+                        xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+                        x:Class="MorrallaExpress.App">
+	<Application.Resources>
+
+        <!-- Font Awesome 5 -->
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+            <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />
+            <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid"> 
+            <On Platform="Android" Value="FontAwesome5Solid.otf#Regular" /> 
+            <On Platform="iOS" Value="FontAwesome5Free-Solid" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+            <On Platform="Android" Value="FontAwesome5Regular.otf#Regular" /> 
+            <On Platform="iOS" Value="FontAwesome5Free-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="HelveticaNeue">
+            <On Platform="Android" Value="HelveticaNeue.otf#Regular" />
+            <On Platform="iOS" Value="HelveticaNeue" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="HelveticaNeueBold">
+            <On Platform="Android" Value="HelveticaNeue-Bold.otf#Regular" />
+            <On Platform="iOS" Value="HelveticaNeue-Bold" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="NunitoRegular">
+            <On Platform="Android" Value="NunitoSans-Regular.ttf#Regular" />
+            <On Platform="iOS" Value="NunitoSans-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="NunitoBold">
+            <On Platform="Android" Value="NunitoSans-Bold.ttf#Regular" />
+            <On Platform="iOS" Value="NunitoSans-Bold" />
+        </OnPlatform>
+
+        <!--Colors-->
+        <Color x:Key="GrayColor2">#868fa7</Color>
+        <Color x:Key="MorrallaColor2">#7db64e</Color>
+        <Color x:Key="DarkGreen">#006c32</Color>
+        <Color x:Key="LightGray">#f5f6f8</Color>
+        <Color x:Key="GrayMorralla">#868fa7</Color>
+        <Color x:Key="BlackMorralla">#2e2e2e</Color>
+        <Color x:Key="BorderColor">#E4E4E4</Color>
+
+        <Color x:Key="MamalonColor">#EFEBEF</Color>
+        <Color x:Key="MorrallaColor">#6CA142</Color>
+        <Color x:Key="WhiteColor">#ffffff</Color>
+        <Color x:Key="GrayColor">#d8d8d8</Color>
+        <Color x:Key="LightGrayColor">#d8d8d8</Color>
+        <Color x:Key="DarkGrayColor">#292929</Color>
+        <Color x:Key="BlackColor">#000000</Color>
+        <Color x:Key="AccentColor1">#6ca142</Color>
+        <Color x:Key="AccentColor2">#003370</Color>
+        <Color x:Key="AccentColor3">#004a98</Color>
+        <Color x:Key="AccentColor4">#dde8f9</Color>
+        <Color x:Key="SuccessColor">#1de9b6</Color>
+        <Color x:Key="LightSuccessColor">#e6f7f3</Color>
+        <Color x:Key="WarningColor">#f4511e</Color>
+        <Color x:Key="LightWarningColor">#fbe9e7</Color>
+        <Color x:Key="InvalidLineColor">#FF204F</Color> <!-- Checar si usamos warning color -->
+        <Color x:Key="AndroidListViewBackgroundColor">Transparent</Color>
+        <Color x:Key="iOSListViewBackgroundColor">Transparent</Color>
+
+        <!-- Converters -->
+        <converterPack:InvertedBooleanConverter x:Key="ReverseBool" />
+        <Converters:IndexToOrderIntegerConverter x:Key="IndexToOrderConverter" />
+
+        <!-- Navigation Page Style -->
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource AccentColor1}" />
+            <Setter Property="BarTextColor" Value="White" />
+        </Style>
+
+        <!-- Basic Entry Style -->
+        <Style TargetType="Entry" x:Key="EntryBlack">
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="Margin" Value="0,6" />
+        </Style>
+        <!-- Basic Entry Style -->
+        <Style TargetType="Entry" x:Key="EntryWhite">
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="PlaceholderColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="Margin" Value="0,6" />
+        </Style>
+
+        <Style BasedOn="{StaticResource EntryBlack}" TargetType="Entry" x:Key="FormEntry">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Numeric Entry Style -->
+        <Style BasedOn="{StaticResource FormEntry}" TargetType="Entry" x:Key="NumericEntry">
+            <Setter Property="Keyboard" Value="Numeric" />
+        </Style>
+
+        <!-- Field Label Descriptor -->
+        <Style TargetType="Label" x:Key="FieldDescriptor">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="Gray" />
+        </Style>
+        
+        <!-- Gray Label New Design -->
+        <Style TargetType="Label" x:Key="GrayLabel">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="TextColor" Value="{StaticResource GrayMorralla}" />
+            <Setter Property="FontFamily" Value="{StaticResource NunitoBold}" />
+        </Style>
+        
+        <!-- Black Label New Design Regular -->
+        <Style TargetType="Label" x:Key="BlackLabel">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="TextColor" Value="{StaticResource BlackMorralla}" />
+            <Setter Property="FontFamily" Value="{StaticResource NunitoRegular}" />
+        </Style>
+        
+        <!-- Black Label New Design Bold -->
+        <Style TargetType="Label" x:Key="BlackBold">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{StaticResource BlackMorralla}" />
+            <Setter Property="FontFamily" Value="{StaticResource NunitoBold}" />
+        </Style>
+        <!-- Field Label Descriptor2 -->
+        <Style TargetType="Label" x:Key="FieldDescriptor2">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <!-- Field Label Descriptor3 --> 
+        <Style TargetType="Label" x:Key="FieldDescriptor3">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20,0"/>
+        </Style>
+
+        <!-- Content Page Title -->
+        <Style TargetType="Label" x:Key="PageTitle">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+
+        <!-- Form final button -->
+        <Style TargetType="Button" x:Key="FormButton">
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource AccentColor1}"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+
+        <!-- Basic picker style-->
+        <Style TargetType="Picker" x:Key="BasicPicker">
+            <Setter Property="TitleColor" Value="Black"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="Visual" Value="Material" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Basic date picker style-->
+        <Style TargetType="Picker" x:Key="DatePicker">
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="TitleColor" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <!--Form Flex Layout-->
+        <Style TargetType="FlexLayout" x:Key="FlexForm">
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="JustifyContent" Value="SpaceEvenly"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!--Invalid field (Center)-->
+        <Style TargetType="FlexLayout" x:Key="FlexFormValidation">
+            <Setter Property="VerticalOptions" Value="Start"/> 
+            <Setter Property="JustifyContent" Value="SpaceEvenly"/>
+            <Setter Property="AlignItems" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!--Invalid field (Mostly validations)-->
+        <Style TargetType="Label" x:Key="InvalidField">
+            <Setter Property="FontAttributes" Value="None"/>
+            <Setter Property="TextColor" Value="{StaticResource InvalidLineColor}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+            <Setter Property="Margin" Value="5,-5,5,0"/>
+        </Style>
+        
+        <!--Add Button-->
+        <Style TargetType="Button" x:Key="AddButton">
+            <Setter Property="BackgroundColor" Value="#6CA142"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+        <!--Delete Button-->
+        <Style TargetType="Button" x:Key="DeleteButton">
+            <Setter Property="BackgroundColor" Value="#d9534f"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <!--Morralla Button-->
+        <Style TargetType="Button" x:Key="MorrallaButton">
+            <Setter Property="BackgroundColor" Value="#7db64e"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="FontFamily" Value="{StaticResource HelveticaNeueBold}"/>
+        </Style>
+        
+        <!--Label Denominations-->
+        <Style TargetType="Label" x:Key="Denomination">
+            <Setter Property="FlexLayout.Basis" Value="90"/>
+            <Setter Property="HorizontalOptions" Value="End"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalTextAlignment" Value="End"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        
+        <!--Label LegalPage-->
+        <Style TargetType="Label" x:Key="LegalLabel">
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontFamily" Value="{StaticResource NunitoBold}" />
+        </Style>
+        
+    </Application.Resources>
+</prism:PrismApplication>

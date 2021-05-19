@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.PrivacyPolicyDriverPage">
+    <ScrollView>
+        <StackLayout Margin="30">
+            <Label TextColor="Black" FontSize="20"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="AVISO DE PRIVACIDAD MORREXSS" Style="{StaticResource PageTitle}"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Actualización.- "/>
+                        <Span Text="febrero 04 de 2020."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14" Text="En atención a lo ordenado por la Ley Federal de Protección de Datos Personales en Posesión de Particulares, nos permitimos poner a su disposición el siguiente aviso de privacidad, informando lo siguiente:"/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="1.- Responsable de la protección de datos personales: Morralla Express, S.A. de C.V. "/>
+                        <Span Text="en lo sucesivo "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="con domicilio para oír y recibir notificaciones el ubicado en Avenida Francisco Monteverde No.- 166, entre Calles Jose S. Healy y Michocán, Colonia San Benito C.P. 83190, de la ciudad de Hermosillo, Sonora, es la responsable del tratamiento, uso y protección de sus datos personales."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="2.- Personal Autorizado: "/>
+                        <Span Text="Es la persona y/o personas autorizadas por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="para que en cumplimiento del artículo 30 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, desempeñe las siguientes funciones: "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="•	Atienda las solicitudes, dudas y aclaraciones de los  "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="•	Fomente y vele por la protección de los datos personales de los "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Socios Morrexss "/>
+                        <Span  Text="que se encuentren en nuestra posesión."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Para todo lo relacionado con el tratamiento y posesión de sus datos personales, usted podrá contactarse en todo momento con nuestro Personal Autorizado, a través de correo electrónico a la siguiente dirección: "/>
+                        <Span Text="datospersonales@morrexss.com " TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="3.- Datos Personales Recabados por Morrexss: "/>
+                        <Span Text="a) de identificación, b) fiscales, c) de contacto, d) financieros a través de terceros con altas medidas de seguridad e encriptación y e) historial de servicios en nuestra plataforma."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="4.- Datos de Terceros: "/>
+                        <Span Text="Para en caso de datos personales de terceros que usted nos proporcione, manifiesta bajo protesta de decir verdad que cuenta previamente a la proporción de ellos con el consentimiento del titular de los mismos y de haber informado a éste sobre nuestro aviso de privacidad y donde encontrarlo."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="5.- Tratamiento Datos Personales: "/>
+                        <Span Text="Los datos recabados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss "/>
+                        <Span Text="serán utilizados para las siguientes finalidades:  "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout Margin="10,0,0,0">
+                <Label FontSize="14" Text="•	Para el debido registro en nuestra plataforma."/>
+                <Label FontSize="14" Text="•	Para poder brindarle servicio de forma eficiente."/>
+                <Label FontSize="14" Text="•	Para poder pagarle sus servicios."/>
+                <Label FontSize="14">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="•	Para que nuestro "/>
+                            <Span FontAttributes="Bold" TextColor="Black" Text="cliente "/>
+                            <Span Text="pueda cerrar su orden de servicio."/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="14" Text="•	Para ofertarle nuevas propuestas de negocios."/>
+                <Label FontSize="14" Text="•	Para permitirle utilizar nuestra plataforma."/>
+                <Label FontSize="14" Text="•	Para apoyarlo con cancelaciones, aclaraciones, modificaciones, devoluciones, reembolsos derivados de alguna incidencia dentro de nuestros servicios."/>
+                <Label FontSize="14" Text="•	Para poder atender sus solicitudes y dudas."/>
+                <Label FontSize="14">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="•	Para poder identificarlo como "/>
+                            <Span FontAttributes="Bold" TextColor="Black" Text="Socio Morrexss."/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="14" Text="•	Para atender sus consultas a través de nuestros medios de contacto."/>
+                <Label FontSize="14" Text="•	Para monitorear la calidad de nuestra atención, ya sea a través de la aplicación o medios de contacto."/>
+                <Label FontSize="14" Text="•	Para cumplir con las diversas disposiciones legales que nos sean aplicables con relación a la prestación de nuestros servicios. "/>
+                <Label FontSize="14" Text="•	Para solicitarle valuación de nuestros servicios."/>
+                <Label FontSize="14" Text="•	Para mercadotecnia y publicidad."/>
+                <Label FontSize="14" Text="•	Para prospección y estrategia comercial."/>
+            </StackLayout>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="En caso de que no desee el uso de sus datos comerciales para finalidades secundarias, como mercadotecnia y publicidad, puede desde este momento negarnos su consentimiento para ese efecto, enviando una solicitud a nuestro correo electrónico "/>
+                        <Span Text="datospersonales@morrexss.com" TextColor="Blue"/>
+                        <Span Text=", donde con gusto atenderemos su solicitud de forma inmediata." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="6.- Transferencia de Datos Personales: "/>
+                        <Span Text="Para el cumplimiento de las actividades señaladas en el punto 5 anterior, los datos personales podrán ser transferidos a las siguientes personas físicas ó morales sin que legalmente se requiera de su consentimiento de conformidad al artículo 37 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares: "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout Margin="10,0,0,0">
+                <Label FontSize="14" Text="•	Empresas ó personas con las que tengamos un contrato celebrado o por celebrar que tenga como finalidad el brindarle servicio o mejorar el mismo."/>
+                <Label FontSize="14" Text="•	Autoridades con la finalidad de dar cumplimiento a las diversas disposiciones normativas a las que estamos sujetos por virtud de nuestra prestación de servicios."/>
+                <Label FontSize="14" Text="•	Clientes, quienes solicitarán nuestros servicios y requieren certeza de quien los atenderá."/>
+                <Label FontSize="14" Text="•	A empresas o personas con la finalidad de prospección y estrategia comercial y/o ventas de nuestros servicios."/>
+                <Label FontSize="14" Text="•	A empresas o personas dedicadas al ramo de la publicidad y/o marketing, para la oferta de nuestros servicios, así como para la realización de estudios de mercado y difusión de publicidad."/>
+            </StackLayout>
+            <Label FontSize="14" Text="Si usted no manifiesta su negativa para que realicemos estas transferencias, o alguna de ellas, daremos por entendido que nos otorga su consentimiento."/>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="7.- Derechos Cliente y/o Usuarios: "/>
+                        <Span Text="a) Usted tiene derecho de Acceso a conocer que datos personales tenemos de usted, para que los utilizamos y las condiciones de uso que les damos, b) Usted tiene derecho a solicitar en cualesquier momento la Corrección de su información personal en caso de error, desactualización, que se encuentre incompleta o sea inexacta, c) Usted tiene derecho a que se Elimine de nuestros registros o base de datos su información personal cuando usted considere que no ha sido utilizada adecuadamente ó por voluntad cancelar su cuenta de usuario con nosotros, y d) Usted tiene derecho a oponerse al uso de sus datos personales para ciertas actividades secundarias, no vinculadas con la relación jurídica contractual con nosotros. "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Para ejercer los derechos antes descritos usted deberá realizar solicitud por escrito debidamente firmada y enviarla por correo electrónico a "/>
+                        <Span Text="datospersonales@morrexss.com" TextColor="Blue"/>
+                        <Span Text=", donde se le informará puntualmente sobre el procedimiento y requisitos necesarios para el ejercicio de sus derechos, como tiempos, forma y donde se le ayudará con cualesquier duda al respecto ó comentario."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="8.- Revocación de Consentimiento  de Uso de Datos Personales: "/>
+                        <Span Text="Usted en cualquier momento podrá solicitar la revocación de consentimiento de uso de datos personales, sin embargo, es importante informar que no en todos los casos será procedente su solicitud, ya que es probable que por cuestión legal necesitemos seguir contando con su información ligada a los servicios prestados por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="9.- Uso Cookies y Web: "/>
+                        <Span Text="Le informamos que nuestra plataforma cuenta con tecnología que nos permite recabar datos de su actividad de manera electrónica y simultánea al tiempo que usted hace contacto con nosotros a través de internet o aplicación; recabando entre otros los siguientes datos: "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout Margin="10,0,0,0">
+                <Label FontSize="14" Text="•	Explorador que usa."/>
+                <Label FontSize="14" Text="•	Horario y tiempo que permaneció en nuestra plataforma."/>
+                <Label FontSize="14" Text="•	Secciones consultadas."/>
+                <Label FontSize="14" Text="•	Su dirección IP."/>
+            </StackLayout>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Dicha información será de uso exclusivo de "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="no se transferirá a terceros, y se utilizará solo para enviar información a su correo, enviar publicidad, hacer llegar información acerca de nuestro servicios o modificación de los mismos, ofrecerle nuevos servicios y mejorar su experiencia para optimizar nuestra web y aplicación móvil."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="10.- Modificaciones: "/>
+                        <Span Text="Nos reservamos el derecho a realizar en cualquier momento modificaciones o actualizaciones a este aviso de privacidad, en base a las actualizaciones legales, cambio en los servicios ofertados o requerimientos nuevos para la prestación de los servicios actuales. El presente aviso siempre estará disponible en nuestra página web como en nuestra aplicación móvil."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label FontSize="14" Margin="0,0,0,20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="11.- Uso indebido de datos: "/>
+                        <Span Text="En caso de que usted considere que sus datos personales han sido utilizados de forma indebida por "/>
+                        <Span FontAttributes="Bold" TextColor="Black" Text="Morrexss, "/>
+                        <Span Text="de conformidad a la Ley de Protección de Datos Personales en Posesión de los Particulares y su Reglamento, podrá interponer su inconformidad ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales. Para mayor información le recomendamos consultar la pagina oficial de dicha autoridad "/>
+                        <Span Text="www.inai.org.mx. " TextColor="Blue"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

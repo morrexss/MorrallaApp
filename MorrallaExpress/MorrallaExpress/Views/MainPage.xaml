@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            BackgroundColor="White" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MorrallaExpress.Views.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="30">
+            <Image Source="RequestIcn.png" HeightRequest="150" />
+            <Label Text="¡No tienes órdenes pendientes!" HorizontalTextAlignment="Center" FontSize="20" Margin="30" />
+            <Button Text="Crear nueva orden" TranslationY="20" Style="{StaticResource FormButton}" Command="{Binding NavigateCommand}"
+                    CommandParameter="NewOrderPage"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

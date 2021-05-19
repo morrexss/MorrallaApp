@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.BillingDriverPage">
+    <ScrollView>
+        <StackLayout Margin="30">
+            <Frame  BackgroundColor="White" CornerRadius="10"  HasShadow="False" BorderColor="{StaticResource BorderColor}" >
+                <StackLayout>
+                    <Label Text="Datos Fiscales" Style="{StaticResource GrayLabel}" FontSize="16" TextColor="{StaticResource MorrallaColor}" />
+                    <!--<Label Text="Nombre comercial: " FontSize="18" VerticalOptions="Center" TextColor="Black"/>
+            <Label Text="{Binding Driver.CompanyName}" FontSize="15" VerticalOptions="Center"/>-->
+
+                    <!--<Label Text="Razón social: " FontSize="18" VerticalOptions="Center" TextColor="Black"/>
+            <Label Text="{Binding Driver.FiscalName}" FontSize="15" VerticalOptions="Center"/>-->
+
+                    <Label Text="R.F.C.: " Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.Rfc}" Style="{StaticResource BlackLabel}"/>
+
+                    <!--<Label Text="Uso CFDI: " FontSize="18" VerticalOptions="Center" TextColor="Black"/>
+            <Label Text="{Binding Driver.Uso}" FontSize="15" VerticalOptions="Center"/>-->
+
+                    <Label Text="Dirección: " Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.FiscalAddress}" Style="{StaticResource BlackLabel}"/>
+
+                    <Label Text="Estado: " Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.FiscalState}" Style="{StaticResource BlackLabel}"/>
+
+                    <Label Text="Ciudad: " Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.FiscalCity}" Style="{StaticResource BlackLabel}"/>
+
+                    <Label Text="Código postal: " Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.FiscalPostalCode}" Style="{StaticResource BlackLabel}" />
+
+
+                    <Label Text="Datos Bancarios" Style="{StaticResource GrayLabel}" FontSize="16" Margin="0,20,0,0" TextColor="{StaticResource MorrallaColor}" />
+
+                    <Label Text="Nombre de banco:" Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.BankName}" Style="{StaticResource BlackLabel}"/>
+
+                    <Label Text="Número de cuenta:" Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.BankAccountHolderName}" Style="{StaticResource BlackLabel}"/>
+
+                    <Label Text="Número de clabe:" Style="{StaticResource GrayLabel}" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Driver.BankAccountClabe}" Style="{StaticResource BlackLabel}"/>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

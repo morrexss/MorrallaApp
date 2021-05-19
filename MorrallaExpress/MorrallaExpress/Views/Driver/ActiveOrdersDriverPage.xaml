@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:Templates="clr-namespace:MorrallaExpress.Views.Orders.Templates"
+             xmlns:Converters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:PrismBehaviors="clr-namespace:MorrallaExpress.Behaviors"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.ActiveOrdersDriverPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="OrderTemplate">
+                <Templates:OrderTemplate />
+            </DataTemplate>
+            <Converters:ItemTappedEventArgsConverter x:Key="ItemTappedArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Actualizar" Order="Primary" Command="{Binding RefreshCommand}" Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <ListView ItemsSource="{Binding Orders, Mode=TwoWay}" IsVisible="{Binding Lista}" 
+                          RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" IsPullToRefreshEnabled="True" 
+                          SelectedItem="{Binding SelectItem}" ItemTemplate="{StaticResource OrderTemplate}" 
+                          RowHeight="200">
+                    <ListView.Behaviors>
+                        <PrismBehaviors:EventToCommandBehavior Command="{Binding ToDetailCommand}"
+                        EventName="ItemTapped" EventArgsConverter="{StaticResource ItemTappedArgsConverter}" />
+                    </ListView.Behaviors>
+                </ListView>
+            </ScrollView>
+            <ContentView IsVisible="{Binding EmptyView}">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="Pay.png" HeightRequest="120"/>
+                    <Label Text="No tienes ninguna orden activa" FontSize="20" HorizontalTextAlignment="Center" Margin="30"  FontFamily="{StaticResource HelveticaNeueBold}" TextColor="#868fa7"/>
+                </StackLayout>
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

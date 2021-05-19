@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Account.PaymentsDetailPage"
+     
+             NavigationPage.BackButtonTitle="">
+        <NavigationPage.TitleView>
+            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Margin="30">
+                    <Label Text="Nombre del titular" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                    <ctrls:CustomEntry Text="{Binding HolderName.Value}" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                    <Label Text="{Binding HolderName.ErrorMessage}" IsVisible="{Binding HolderName.IsValid, Converter={StaticResource ReverseBool}}"
+                           Style="{StaticResource InvalidField}"/>
+
+                    <Label Text="Numero de tarjeta" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                    <ctrls:CustomEntry Text="{Binding CardNumber.Value}" HorizontalOptions="FillAndExpand" MaxLength="16" Keyboard="Numeric" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                    <Label Text="{Binding CardNumber.ErrorMessage}" IsVisible="{Binding CardNumber.IsValid, Converter={StaticResource ReverseBool}}"
+                           Style="{StaticResource InvalidField}"/>
+
+                    <Label Text="CVV" Style="{StaticResource GrayLabel}" Margin="0,20,0,0"/>
+                    <ctrls:CustomEntry Text="{Binding Cvv.Value}" HorizontalOptions="FillAndExpand" Keyboard="Numeric" MaxLength="3" HeightRequest="45" CornerRadius="30"
+                                   IsEnabled="{Binding EntriesEnabled}" Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+                    <Label Text="{Binding Cvv.ErrorMessage}" IsVisible="{Binding Cvv.IsValid, Converter={StaticResource ReverseBool}}"
+                           Style="{StaticResource InvalidField}"/>
+                    
+                    
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="Mes" Style="{StaticResource GrayLabel}" />
+                            <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+                                <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                                    <ctrls:CustomPicker Image="Filled.png" Title="Selecciona" ItemsSource="{Binding MonthList}"  SelectedItem="{Binding SelectedMonth.Value}"
+                                     HorizontalOptions="FillAndExpand" IsEnabled="{Binding EntriesEnabled}"  BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                                    </ctrls:CustomPicker>
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="{Binding SelectedMonth.ErrorMessage}" IsVisible="{Binding SelectedMonth.IsValid, Converter={StaticResource ReverseBool}}"
+                                Style="{StaticResource InvalidField}"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="Año" Style="{StaticResource GrayLabel}" />
+                            <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+                                <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                                    <ctrls:CustomPicker Image="Filled.png" Title="Selecciona" ItemsSource="{Binding YearList}"  SelectedItem="{Binding SelectedYear.Value}"
+                                     HorizontalOptions="FillAndExpand" IsEnabled="{Binding EntriesEnabled}"  BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                                    </ctrls:CustomPicker>
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="{Binding SelectedYear.ErrorMessage}" IsVisible="{Binding SelectedYear.IsValid, Converter={StaticResource ReverseBool}}"
+                                Style="{StaticResource InvalidField}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                        <Label Text="Tarjetas de crédito aceptadas" FontFamily="{StaticResource HelveticaNeue}" TextColor="{StaticResource GrayMorralla}" FontAttributes="None" FontSize="12" VerticalOptions="StartAndExpand" />
+                        <Image Source="tarjetasCredito.png" HeightRequest="20" HorizontalOptions="EndAndExpand" TranslationY="2"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Tarjetas de débito aceptadas" FontFamily="{StaticResource HelveticaNeue}" TextColor="{StaticResource GrayMorralla}" FontAttributes="None" FontSize="12" VerticalOptions="StartAndExpand" />
+                        <Image Source="tarjetasDebito.png" HeightRequest="35" HorizontalOptions="EndAndExpand" TranslationY="5"/>
+                    </StackLayout>
+                    <Label Text="Tus pagos son procesados de manera segura a través de:" FontFamily="{StaticResource HelveticaNeue}" TextColor="{StaticResource GrayMorralla}" Margin="0,20,0,0" FontSize="11"/>
+                    <Image Source="openpay.png" HeightRequest="32" HorizontalOptions="Center" Margin="0,10,0,0"/>
+
+                    <Button Text="Agregar tarjeta" Margin="0,20" CornerRadius="15" VerticalOptions="EndAndExpand" Style="{StaticResource FormButton}" Command="{Binding SaveCommand}" 
+                        IsVisible="{Binding EntriesEnabled}" />
+                </StackLayout>
+            </ScrollView>
+            <AbsoluteLayout VerticalOptions="End" HorizontalOptions="EndAndExpand" IsVisible="{Binding IsEdit}">
+                <Button  Command="{Binding DeleteCommand, Mode=TwoWay}" ImageSource="{Binding DeleteIconSource}" Style="{StaticResource DeleteButton}"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

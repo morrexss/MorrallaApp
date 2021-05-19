@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:local="clr-namespace:MorrallaExpress.Views.Orders"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="MorrallaExpress.Views.Orders.OrdersTabbedPage"
+            android:TabbedPage.BarSelectedItemColor="#6ca142"
+            android:TabbedPage.BarItemColor="#8da2b9"
+ >
+    <TabbedPage.Children>
+        <local:PendingOrdersPage Title="Pendientes" IconImageSource="pending.png"/>
+        <local:ActiveOrdersPage Title="Activos" IconImageSource="active.png"/>
+        <local:OrdersHistoryPage Title="Historial" IconImageSource="history.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

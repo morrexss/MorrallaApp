@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Login.RegisterClientPage"
+             xmlns:Cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:Spb="clr-namespace:Xamarin.Forms.StepProgressBar;assembly=Xamarin.Forms.StepProgressBar"
+             NavigationPage.BackButtonTitle=""
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Margin="20,10">
+            <Label Text="{Binding StepTitle}" Style="{StaticResource BlackBold}" FontSize="20"
+                   HeightRequest="45" Margin="10" HorizontalOptions="CenterAndExpand"/>
+            
+            
+            <Spb:StepProgressBar StepColor="{StaticResource MorrallaColor2}" Steps="3" StepCanTouch="False" IsCircle="True"
+                                 StepSelected="{Binding Step, Converter={StaticResource IndexToOrderConverter}}" />
+            
+            
+            <Cv:CarouselViewControl Position="{Binding Step}" Orientation="Horizontal" IsSwipeEnabled="False" InterPageSpacing="10" MinimumHeightRequest="200"
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemsSource="{Binding RegisterClientTemplates}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

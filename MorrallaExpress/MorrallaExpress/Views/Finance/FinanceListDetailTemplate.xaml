@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" IsEnabled="False"
+             x:Class="MorrallaExpress.Views.Finance.FinanceListDetailTemplate">
+  <ViewCell.View >
+      <StackLayout Orientation="Horizontal" HeightRequest="50">
+            <Label Text="{Binding DeliveredDate, StringFormat='{0:dd/MM/yyyy}'}" VerticalOptions="CenterAndExpand" Style="{StaticResource BlackLabel}" FontSize="14" HorizontalOptions="Start"/>
+            <Label Text="{Binding DeliveryId}"  Style="{StaticResource BlackLabel}" VerticalOptions="CenterAndExpand" FontSize="14" HorizontalOptions="Center" Margin="60,0,0,0"/>
+            <Label Text="{Binding DriverComission}"  Style="{StaticResource BlackLabel}" VerticalOptions="CenterAndExpand" FontSize="14" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+  </ViewCell.View>
+</ViewCell>

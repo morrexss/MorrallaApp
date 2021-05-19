@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MorrallaExpress.Views.Orders.Templates.OrderTemplate">
+    <ViewCell.View>
+        <Frame HasShadow="false" CornerRadius="5" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="250" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Name}" HeightRequest="22" VerticalOptions="Start" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="18" TextColor="#868fa7" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding DeliveryId, Mode=OneWay, StringFormat='Orden #{0}'}" />
+                                    <Span Text=" - " />
+                                    <Span Text="{Binding Location.Name, Mode=OneWay}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label  FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"  >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Fecha: &#10;"/>
+                                    <Span Text="{Binding RequestDate, StringFormat='{0:dd MMMM yyyy}'}" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Dirección: &#10;"/>
+                                    <Span Text="{Binding Location.Address1}" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                    <Span Text=" #" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                    <Span Text="{Binding Location.ExteriorNumber}" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource MorrallaColor2}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Comisión: &#10;"/>
+                                    <Span Text="{Binding TotalComission, StringFormat='${0:N2}'}" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource MorrallaColor2}" HorizontalOptions="CenterAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Morralla: &#10;"/>
+                                    <Span Text="{Binding TotalExchange, StringFormat='${0:N2}'}" FontFamily="{StaticResource HelveticaNeue}" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+                
+            </Grid>
+        </Frame>
+    </ViewCell.View>
+</ViewCell>

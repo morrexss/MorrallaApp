@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="MorrallaExpress.Views.HomeMasterDetailPage"
+                  x:Name="MasterPage">
+    <MasterDetailPage.Master>
+        
+        <ContentPage Title="☰" >
+            <ScrollView VerticalOptions="StartAndExpand" >
+                <StackLayout Padding="20" VerticalOptions="StartAndExpand">
+                    <ListView ItemsSource="{Binding Navigations}" VerticalOptions="StartAndExpand" RowHeight="65" HeightRequest="500">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="5,10" VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding NavigateToCommand}" />
+                                        </Grid.GestureRecognizers>
+                                        <Label Text="{Binding Icon.Icon}" FontFamily="{StaticResource FontAwesomeSolid}" FontSize="24" FontAttributes="Bold" />
+                                        <Label Grid.Column="1" Text="{Binding Title}" Style="{StaticResource PageTitle}" FontFamily="{StaticResource HelveticaNeueBold}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Footer>
+                            <Label Text="Versión 0.1" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="10,40,10,0"/>
+                        </ListView.Footer>
+                    </ListView>
+                    
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

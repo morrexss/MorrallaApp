@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            xmlns:local="clr-namespace:MorrallaExpress.Views.Legal"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="MorrallaExpress.Views.Legal.LegalTabbedPage"
+            android:TabbedPage.BarSelectedItemColor="#6ca142"
+            android:TabbedPage.BarItemColor="#8da2b9">
+    <TabbedPage.Children>
+        <local:LegalPage Title="Términos y condiciones" IconImageSource="Gavel.png"/>
+        <local:ContractPage Title="Aviso de privacidad" IconImageSource="Terms.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

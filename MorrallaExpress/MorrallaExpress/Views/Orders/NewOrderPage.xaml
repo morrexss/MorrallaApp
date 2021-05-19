@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Orders.NewOrderPage"
+             xmlns:PrismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:PrismConverters="clr-namespace:MorrallaExpress.Converters"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Name="NewOrder"
+             NavigationPage.BackButtonTitle=""
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <PrismConverters:SelectedItemChangedEventArgsConverter x:Key="ArgsConverter" />
+        </ResourceDictionary>   
+    </ContentPage.Resources>
+        <NavigationPage.TitleView>
+            <Label Text="Nueva orden" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20"/>
+    </NavigationPage.TitleView>
+    <Grid>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="Ingresa tu sucursal" Style="{StaticResource GrayLabel}" />
+                <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="46" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                    <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                        <ctrls:CustomPicker Image="Filled.png" Title="Selecciona una sucursal" ItemsSource="{Binding Locations}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedLocation}"
+                                     HorizontalOptions="FillAndExpand"  BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                            <ctrls:CustomPicker.Behaviors>
+                                <PrismBehaviors:EventToCommandBehavior EventName="Focused" Command="{Binding Source={x:Reference NewOrder}, Path=BindingContext.LocationsPickerFocusCommand}" />
+                            </ctrls:CustomPicker.Behaviors>
+                        </ctrls:CustomPicker>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Ingresa tu método de pago" Style="{StaticResource GrayLabel}" Margin="0,15,0,0"/>
+                <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="46" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                    <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                        <ctrls:CustomPicker Image="Filled.png" Title="Selecciona un método de pago" ItemsSource="{Binding PaymentMethods}" ItemDisplayBinding="{Binding MaskedCard}" SelectedItem="{Binding SelectedPaymentMethod}"
+                                            FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" HorizontalOptions="FillAndExpand"  BackgroundColor="Transparent">
+                            <ctrls:CustomPicker.Behaviors>
+                                <PrismBehaviors:EventToCommandBehavior EventName="Focused" Command="{Binding Source={x:Reference NewOrder}, Path=BindingContext.PaymentsPickerFocusCommand}" />
+                            </ctrls:CustomPicker.Behaviors>
+                        </ctrls:CustomPicker>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,30">
+                    <Label Text="¿Cómo deseas tu morralla?" Style="{StaticResource GrayLabel}" />
+                    <Image Source="Info.png" BackgroundColor="Transparent" HeightRequest="25" Margin="20,0" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.ToDenominationsCommand, Source={x:Reference NewOrder}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15,5,15,10">
+                    <Label  Style="{StaticResource GrayLabel}" Text="Denominación"/>
+                    <Label  Style="{StaticResource GrayLabel}" Text="Cantidad ($)" HorizontalOptions="CenterAndExpand" TranslationX="15"/>
+                </StackLayout>
+                        <ListView HorizontalOptions="FillAndExpand" HeightRequest="470" RowHeight="92" VerticalOptions="FillAndExpand" SelectionMode="None" ItemsSource="{Binding Denominations}" VerticalScrollBarVisibility="Never" SeparatorVisibility="None" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame  BackgroundColor="White" BorderColor="{StaticResource BorderColor}" HasShadow="False"  Margin="10" CornerRadius="10" >
+                                             <StackLayout Orientation="Horizontal" >
+                                                <Frame BackgroundColor="#7DB64E" CornerRadius="10" WidthRequest="50" HeightRequest="15" HasShadow="False" Padding="5">
+                                                    <Label Text="{Binding Value, StringFormat='${0:N0}'}" FontSize="14" Style="{StaticResource BlackLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" />
+                                                </Frame>
+                                        <Label Text="X" Margin="40,0,15,0" FontFamily="{StaticResource NunitoBold}" FontSize="18" TextColor="#868fa7" VerticalOptions="CenterAndExpand"/>
+                                                <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2"  HeightRequest="80" HorizontalOptions="CenterAndExpand" WidthRequest="80" HasShadow="False" BorderColor="{StaticResource BorderColor}" Padding="0">
+                                                    <StackLayout Orientation="Horizontal" Margin="20,0,0,0" Padding="0,-6" HorizontalOptions="EndAndExpand">
+                                                        <ctrls:CustomPicker Image="empty.png" CornerRadius="0" x:Name="Picker" ItemsSource="{Binding Details}" ItemDisplayBinding="{Binding Value}"  HeightRequest="50" WidthRequest="90" 
+                                                                                        BorderColor="Silver" HorizontalOptions="CenterAndExpand"  FontSize="15" TextColor="{StaticResource BlackMorralla}" FontFamily="{StaticResource NunitoRegular}">
+                                                            <ctrls:CustomPicker.Behaviors>
+                                                                <PrismBehaviors:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding Source={x:Reference NewOrder}, Path=BindingContext.PickerChangedCommand}"
+                                                                                  CommandParameter="{Binding Source={x:Reference Picker}, Path=SelectedItem}" />
+                                                            </ctrls:CustomPicker.Behaviors>
+                                                        </ctrls:CustomPicker>
+                                                    </StackLayout>
+                                                </Frame>
+                                              </StackLayout>
+                                        </Frame>
+                                        
+                                        <!--<FlexLayout JustifyContent="SpaceAround" VerticalOptions="FillAndExpand" AlignItems="Center">
+                                            <Label Text="{Binding Value, StringFormat='${0:N0}'}" FlexLayout.Basis="90" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black"  />
+                                            <Label Text="X" FlexLayout.Basis="20" FontSize="32" TextColor="Silver" HorizontalTextAlignment="Start"/>
+                                            <ctrls:CustomPicker CornerRadius="0" x:Name="Picker" ItemsSource="{Binding Details}" ItemDisplayBinding="{Binding Value}" FlexLayout.Basis="80" HeightRequest="40" BorderColor="Silver" HorizontalOptions="FillAndExpand"  FontSize="16"
+                                                    TextColor="Silver">
+                                                <ctrls:CustomPicker.Behaviors>
+                                                    <PrismBehaviors:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding Source={x:Reference NewOrder}, Path=BindingContext.PickerChangedCommand}"
+                                                                          CommandParameter="{Binding Source={x:Reference Picker}, Path=SelectedItem}" />
+                                                </ctrls:CustomPicker.Behaviors>
+                                            </ctrls:CustomPicker>
+                                        </FlexLayout>-->
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Info.png" BackgroundColor="Transparent" HeightRequest="25" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PaymentTotalModalCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="{Binding PaymentTotal, StringFormat='Comisión ${0:#,##0.00}'}" WidthRequest="84"
+                               Style="{StaticResource GrayLabel}" HorizontalTextAlignment="Center"  />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand" TranslationX="-5" Orientation="Horizontal">
+                        <Image Source="Info.png" BackgroundColor="Transparent" HeightRequest="25" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding MorrexxsTotalModalCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="{Binding MorrexssTotal, StringFormat='Morralla ${0:#,##0.00}'}"  WidthRequest="84"
+                               Style="{StaticResource GrayLabel}" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="20">
+                    <Button CornerRadius="10" Text="Realizar orden" Command="{Binding CreateOrderCommand}" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="{StaticResource MorrallaColor}" TextColor="White" FontSize="17" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+
+        <ContentView  BackgroundColor="#C0808080" Padding="25" IsVisible="{Binding PaymentTotalModal}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                <StackLayout Orientation="Vertical" HeightRequest="130" WidthRequest="300" Spacing="20" BackgroundColor="White">
+                    <StackLayout Margin="20">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Comisión"  Style="{StaticResource GrayLabel}" />
+                            <Label Text="X"  Style="{StaticResource BlackBold}" FontSize="20" Margin="0,-10,0,0" HorizontalOptions="EndAndExpand" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PaymentTotalModalCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <Label Text="Cantidad que se cargara al método de pago del cliente por el servicio prestado." Style="{StaticResource BlackLabel}"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ContentView>
+
+        <ContentView  BackgroundColor="#C0808080" Padding="25" IsVisible="{Binding MorrexssTotalModal}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                <StackLayout Orientation="Vertical" HeightRequest="110" WidthRequest="300" Spacing="20" BackgroundColor="White">
+                    <StackLayout Margin="20">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Morralla" Style="{StaticResource GrayLabel}"/>
+                            <Label Text="X" TextColor="Black" Style="{StaticResource BlackBold}" FontSize="20" Margin="0,-10,0,0" HorizontalOptions="EndAndExpand" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding MorrexxsTotalModalCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <Label Text="Moneda solicitada y recibida por el cliente contra entrega de efectivo. " Style="{StaticResource BlackLabel}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ContentView>
+    </Grid>
+</ContentPage>

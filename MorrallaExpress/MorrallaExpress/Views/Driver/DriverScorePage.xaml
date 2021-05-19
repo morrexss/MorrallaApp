@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MorrallaExpress.Views.Driver.DriverScorePage"
+             BackgroundColor="White">
+    <ScrollView>
+            <StackLayout Margin="30" >
+            <Frame CornerRadius="20" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="UserInfo" HeightRequest="59"/>
+                        <StackLayout Margin="20,0">
+                            <Label Text="{Binding Name}" Style="{StaticResource BlackBold}" FontSize="20"/>
+                            <Label Text="{Binding Email}" Style="{StaticResource BlackLabel}" TextColor="{StaticResource GrayMorralla}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,10">
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Deliveries}" Style="{StaticResource BlackBold}" FontSize="14"/>
+                            <Label Text="Entregas" Style="{StaticResource BlackLabel}" TextColor="{StaticResource GrayMorralla}" FontSize="14"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding Years}" Style="{StaticResource BlackBold}" FontSize="14"/>
+                            <Label Text="Antigüedad" Style="{StaticResource BlackLabel}" TextColor="{StaticResource GrayMorralla}" FontSize="14"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label Text="{Binding StartDate}" Style="{StaticResource BlackBold}" FontSize="14"/>
+                            <Label Text="Inicio" Style="{StaticResource BlackLabel}" TextColor="{StaticResource GrayMorralla}" FontSize="14"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Label Text="Mi puntuación:" Style="{StaticResource GrayLabel}" Margin="0,20"/>
+            <StackLayout Orientation="Horizontal">
+                <Frame BackgroundColor="#fffbee" HeightRequest="60" WidthRequest="103" CornerRadius="10" HasShadow="False">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Image Source="Oro.png" HeightRequest="39"/>
+                        <Label Text="{Binding Gold}" Style="{StaticResource BlackLabel}" FontSize="13" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#f7f5f5" HeightRequest="60" WidthRequest="103" CornerRadius="10" HasShadow="False">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Image Source="Plata.png" HeightRequest="39"/>
+                        <Label Text="{Binding Silver}" Style="{StaticResource BlackLabel}" FontSize="13" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#fff2ed" HeightRequest="60" WidthRequest="103" CornerRadius="10" HasShadow="False">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Image Source="Bronze.png" HeightRequest="39"/>
+                        <Label Text="{Binding Bronze}" Style="{StaticResource BlackLabel}" FontSize="13" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <Label Text="Tip del mes:" Style="{StaticResource GrayLabel}" Margin="0,20"/>
+            <Frame HeightRequest="137" BackgroundColor="#f5f6f8" CornerRadius="10" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                <Label Text=""/>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

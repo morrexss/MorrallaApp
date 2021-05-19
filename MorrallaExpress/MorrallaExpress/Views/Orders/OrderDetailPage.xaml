@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:Controls="clr-namespace:MorrallaExpress.Controls"
+             xmlns:GoogleMaps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="MorrallaExpress.Views.Orders.OrderDetailPage"
+             Title="{Binding CurrentOrder.DeliveryId, StringFormat= 'Orden #{0}' }"
+             NavigationPage.BackButtonTitle="">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" x:Name="HeaderRow"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="#6CA142" HasShadow="False" CornerRadius="0" >
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" x:Name="Header" Margin="0,0,0,-7" >
+                    <ImageButton BackgroundColor="Transparent" Aspect="AspectFill" Source="backIcn2.png" TranslationY="0"  HorizontalOptions="Start" Command="{Binding BackkCommand}" HeightRequest="60" x:Name="Im"/>
+                    <Label Text="{Binding CurrentOrder.DeliveryId, StringFormat= 'Orden #{0}' }" HorizontalOptions="CenterAndExpand" TranslationX="-10" TranslationY="0" TextColor="White" FontSize="17" FontFamily="{StaticResource NunitoBold}"/>
+
+                </StackLayout>
+            </Frame>
+            
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+
+                    <Frame CornerRadius="20" Margin="25,25,25,20" IsClippedToBounds="True">
+                        <Controls:CircledMap x:Name="MainMap"  HeightRequest="188" IsVisible="{Binding IsEditing}" Margin="-20" />
+                    </Frame>
+
+                    <StackLayout Orientation="Horizontal"  Margin="25,0,25,20" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Estatus:" Style="{StaticResource GrayLabel}"/>
+                        <Label Text="{Binding TextStatus}" Style="{StaticResource BlackLabel}"/>
+                        <Button x:Name="CircleButton" BackgroundColor="{StaticResource MorrallaColor}" HeightRequest="-15" CornerRadius="10"  WidthRequest="18"/>
+                    </StackLayout>
+
+                    <!--<StackLayout  BackgroundColor="{StaticResource MorrallaColor}" Margin="0,-6"
+                             Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout IsVisible="{Binding NotVisibleTime}" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label Text="{Binding Status, StringFormat='Estatus: {0}'}" 
+                            HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,0,0" TextColor="White" FontSize="15" FontAttributes="Bold" />
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding VisibleTime}" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,0,0" TextColor="White" FontSize="15" FontAttributes="Bold" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Estatus: " />
+                                    <Span Text="{Binding Status}" />
+                                    <Span Text=" | Tiempo: " />
+                                    <Span Text="{Binding CurrentOrder.EstimatedDelivery}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>-->
+
+                    <Frame HasShadow="false" CornerRadius="15" BackgroundColor="#FFFFFF" BorderColor="{StaticResource BorderColor}" Margin="15,0,15,15" >
+                        <StackLayout >
+                            <Label  Style="{StaticResource GrayLabel}" Text="Fecha:"/>
+                            <Label Text="{Binding CurrentOrder.RequestDate, StringFormat='{0:dd MMMM yyyy}'}" Style="{StaticResource BlackLabel}"/>
+                            <Label  Style="{StaticResource GrayLabel}" Text="Dirección:"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding CurrentOrder.Location.Address1}" Style="{StaticResource BlackLabel}"/>
+                                <Label Text="#" Style="{StaticResource BlackLabel}"/>
+                                <Label Text="{Binding CurrentOrder.Location.ExteriorNumber}" Style="{StaticResource BlackLabel}"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label  Style="{StaticResource GrayLabel}" Text="Hora realización:"/>
+                                    <Label Text="{Binding CurrentOrder.RequestDate,StringFormat='{}{0:hh:mm}'}" Style="{StaticResource BlackLabel}"/>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Label  Style="{StaticResource GrayLabel}" Text="Hora de entrega:" IsVisible="{Binding ShowDeliveredTime}"/>
+                                    <Label Text="{Binding CurrentOrder.DeliveredDate,StringFormat='{}{0:hh:mm}'}" Style="{StaticResource BlackLabel}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Label  Style="{StaticResource GrayLabel}" Text="Comisión:"/>
+                            <Label Text="{Binding CurrentOrder.TotalComission,  StringFormat='${0:N2}'}" Style="{StaticResource BlackLabel}"/>
+                            <Label  Style="{StaticResource GrayLabel}" Text="Socio Morrexss:"/>
+                            <Label Text="{Binding CurrentOrder.Driver.Name}" Style="{StaticResource BlackBold}" TextDecorations="Underline">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ToDetailCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <Label Text="Detalle de la orden" Style="{StaticResource BlackBold}" Margin="30,30,0,0"/>
+                    <StackLayout Orientation="Horizontal" Margin="30,10">
+                        <Label  Style="{StaticResource GrayLabel}" Text="Denominación"/>
+                        <Label  Style="{StaticResource GrayLabel}" Text="Cantidad" HorizontalOptions="EndAndExpand" TranslationX="-25"/>
+                    </StackLayout>
+
+                    <Frame Margin="15,0" CornerRadius="15" BackgroundColor="White" HasShadow="False" BorderColor="{StaticResource BorderColor}">
+                        <StackLayout>
+                            <ListView HeightRequest="{Binding DenominationsHeight}"  ItemsSource="{Binding OrderDetails}" VerticalScrollBarVisibility="Never" SeparatorVisibility="None" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <FlexLayout JustifyContent="SpaceAround" VerticalOptions="FillAndExpand" AlignItems="Center">
+                                                <Label Text="{Binding Name, StringFormat='{0:N0}'}" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource BlackLabel}" />
+                                                <Label Text="x" FlexLayout.Basis="20" HorizontalTextAlignment="Center" Style="{StaticResource BlackLabel}"/>
+                                                <Label Text="{Binding Quantity, StringFormat='${0:N2}'}"  HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource BlackLabel}" />
+                                            </FlexLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <!--<Grid Margin="0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Total de Morralla: " Style="{StaticResource BlackBold}"  Grid.Column="0" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding TotalExchange,  StringFormat='${0:N2}'}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource MorrallaColor}" Style="{StaticResource BlackBold}" Grid.Column="1" />
+                        </Grid>-->
+                            <BoxView HeightRequest="1" BackgroundColor="{StaticResource BorderColor}" HorizontalOptions="FillAndExpand" />
+                            <StackLayout Orientation="Horizontal" Margin="0,10">
+                                <Label Text="Total de Morralla: " Style="{StaticResource BlackBold}"   VerticalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding TotalExchange,  StringFormat='${0:N2}'}" TranslationX="30"  WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{StaticResource MorrallaColor}" Style="{StaticResource BlackBold}"  />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout VerticalOptions="EndAndExpand" Grid.Row="2" Margin="20,20">
+                        <Button Text="Cancelar orden" Command="{Binding CancelOrderCommand}" IsVisible="{Binding IsCancelable}" CornerRadius="15"
+                                Style="{StaticResource FormButton}" Margin="0,15,0,0" BackgroundColor="#d9534f"/>
+                        <Button Text="Calificar orden" Command="{Binding ReviewOrderCommand}" IsVisible="{Binding IsReviewable}" CornerRadius="15"
+                                Style="{StaticResource FormButton}" Margin="0,15,0,0" BackgroundColor="{StaticResource MorrallaColor}"/>
+                    </StackLayout>
+
+                    <StackLayout IsVisible="{Binding Clarifications}" Margin="30,0,30,30">
+                        <Label Text="Aclaraciones" Style="{StaticResource BlackBold}"/>
+                        <Label Text="¿Tuviste algún detalle con tu orden? &#10; Te ayudamos con gusto." Style="{StaticResource BlackLabel}"/>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                            <Image Source="WhaGroup.png" HeightRequest="20" />
+                            <Label Text="66 21 69 41 67" Style="{StaticResource BlackLabel}" Margin="20,0" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenTelMobileCommand}"  />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Image Source="Phone_icn.png" HeightRequest="20"/>
+                            <Label Text="{Binding TelMorrexss}" Style="{StaticResource BlackLabel}" Margin="20,5">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenTelCommand}"   />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="ic_mail.png" HeightRequest="15" />
+                            <Label Text="soporte@morrexss.com" Style="{StaticResource BlackLabel}" TextColor="#4091DF" Margin="20,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenGmailCommand}"  />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+
+        </Grid>
+        
+       
+    </ContentPage.Content>
+</ContentPage>

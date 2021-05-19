@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MorrallaExpress.Views.Finance.FinanceListSubTotalTemplate">
+  <ViewCell.View >
+      <StackLayout Orientation="Horizontal" HeightRequest="50">
+            <Image Source="Info.png" BackgroundColor="Transparent" HeightRequest="20"  >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Tapped, Mode=TwoWay}" CommandParameter="{Binding .}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="{Binding Date}" VerticalOptions="CenterAndExpand" FontSize="16" Style="{StaticResource GrayLabel}" TextColor="{StaticResource MorrallaColor}" />
+            <Label Text="{Binding SubTotal}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" FontSize="16" Style="{StaticResource GrayLabel}" TextColor="{StaticResource MorrallaColor}"/>
+        </StackLayout>
+      
+      </ViewCell.View>
+
+</ViewCell>

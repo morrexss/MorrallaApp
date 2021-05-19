@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScrollView VerticalScrollBarVisibility="Never"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns:PrismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+            xmlns:ctrls="clr-namespace:MorrallaExpress.Controls"
+            x:Class="MorrallaExpress.Views.Login.Templates.FiscalFormTemplate"
+    Padding="15, 0">
+    <StackLayout>
+        <Label Text="Nombre comercial" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}" Margin="0,20,0,0"/>
+        <ctrls:CustomEntry Text="{Binding CompanyName.Value}" Placeholder="Nombre comercial" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding CompanyName.ErrorMessage}" IsVisible="{Binding CompanyName.IsValid, Converter={StaticResource ReverseBool}}"
+               Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Razón social" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding FiscalName.Value}" Placeholder="Razón social" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding FiscalName.ErrorMessage}" IsVisible="{Binding FiscalName.IsValid, Converter={StaticResource ReverseBool}}"
+               Style="{StaticResource InvalidField}"/>
+
+        <Label Text="R.F.C." Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding Rfc.Value}" Placeholder="XAXX010101000"  MaxLength="13" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                    <ctrls:CustomEntry.Behaviors>
+                        <PrismBehaviors:EventToCommandBehavior EventName="Focused" Command="{Binding RfcFocusedCommand}" />
+                    </ctrls:CustomEntry.Behaviors>
+                </ctrls:CustomEntry>
+        <Label Text="{Binding Rfc.ErrorMessage}" IsVisible="{Binding Rfc.IsValid, Converter={StaticResource ReverseBool}}"
+               Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Seleccione su uso CFDI" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+            <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                <ctrls:CustomPicker Image="Filled.png" Title="Selecciona CFDI" ItemsSource="{Binding UsoCFDIsList}"  SelectedItem="{Binding UsoCFDI.Value}"
+                                     HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}" BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                </ctrls:CustomPicker>
+            </StackLayout>
+        </Frame>
+         <Label Text="{Binding UsoCFDI.ErrorMessage}" IsVisible="{Binding UsoCFDI.IsValid, Converter={StaticResource ReverseBool}}"
+               Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Dirección" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding FiscalAddress.Value}" Placeholder="Calle # colonia y delegación" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding FiscalAddress.ErrorMessage}" IsVisible="{Binding FiscalAddress.IsValid, Converter={StaticResource ReverseBool}}"
+               Style="{StaticResource InvalidField}"/>
+
+        <Label Text="Estado" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+            <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                <ctrls:CustomPicker Image="Filled.png" Title="Selecciona tu estado" ItemsSource="{Binding States}"  SelectedItem="{Binding FiscalState.Value}"
+                                     HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}" BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                </ctrls:CustomPicker>
+            </StackLayout>
+        </Frame>
+        <Label Text="{Binding FiscalState.ErrorMessage}" IsVisible="{Binding FiscalState.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>
+        
+        <Label Text="Ciudad" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <Frame BackgroundColor="#f5f6f8" CornerRadius="10" Margin="2" Padding="0,-4" HeightRequest="55" HasShadow="False" >
+            <StackLayout Orientation="Horizontal" Margin="10,0,0,0" Padding="0,-6">
+                <ctrls:CustomPicker Image="Filled.png" Title="Selecciona tu ciudad" ItemsSource="{Binding FiscalState.Value.Cities}"  SelectedItem="{Binding FiscalCity.Value}"
+                                     HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}" BackgroundColor="Transparent" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}">
+                </ctrls:CustomPicker>
+            </StackLayout>
+        </Frame>
+        <Label Text="{Binding FiscalCity.ErrorMessage}" IsVisible="{Binding FiscalCity.IsValid, Converter={StaticResource ReverseBool}}"
+                       Style="{StaticResource InvalidField}"/>
+
+        <!--<StackLayout HorizontalOptions="FillAndExpand">
+                <Entry Text="{Binding FiscalDelegation.Value}" Placeholder="Delegación" Style="{StaticResource FormEntry}"
+                    HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding FiscalDelegation.ErrorMessage}" IsVisible="{Binding FiscalDelegation.IsValid, Converter={StaticResource ReverseBool}}"
+                    Style="{StaticResource InvalidField}"/>
+            </StackLayout>-->
+        <Label Text="Código postal" Margin="0,10,0,0" FontFamily="{StaticResource HelveticaNeueBold}" FontSize="15" TextColor="{StaticResource GrayColor2}"/>
+        <ctrls:CustomEntry Text="{Binding FiscalPostalCode.Value}" Keyboard="Numeric" Placeholder="00000" HorizontalOptions="FillAndExpand" HeightRequest="45" CornerRadius="30"
+                                    Style="{StaticResource FormEntry}" MaxLength="5" FontFamily="{StaticResource NunitoRegular}" FontSize="15" TextColor="{StaticResource BlackMorralla}" />
+        <Label Text="{Binding FiscalPostalCode.ErrorMessage}" IsVisible="{Binding FiscalPostalCode.IsValid, Converter={StaticResource ReverseBool}}"
+                    Style="{StaticResource InvalidField}"/>
+        <Button Text="Siguiente" CornerRadius="15" Command="{Binding ToStep3Command}" Style="{StaticResource MorrallaButton}"  Margin="0, 20" VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ScrollView>
